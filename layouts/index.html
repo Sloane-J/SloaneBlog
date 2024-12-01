@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    <link rel="icon" href="{{ .Site.Params.favicon }}" type="image/png">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/customCSS.css">
+   
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="logo">
+                <a href="/">{{ .Site.Title }}</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/tutorials">Tutorials</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="/images/Olivia.png" alt="{{ .Site.Params.author }}">
+                </div>
+                <div class="hero-text">
+                    <h1>{{ .Site.Params.heroTitle | default "Welcome to My Blog" }}</h1>
+                    <p>{{ .Site.Params.description }}</p>
+                    <div class="hero-cta">
+                        <a href="/about" class="btn btn-primary">Learn More About Me</a>
+                        <a href="/posts" class="btn btn-secondary">View Latest Posts</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Content -->
+    <section class="featured-content">
+        <div class="container">
+            <h2>Featured Highlights</h2>
+            <div class="featured-grid">
+                {{ range first 3 (where .Site.Pages "Params.featured" true) }}
+                <div class="featured-card">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                    <div class="featured-card-content">
+                        <h3>{{ .Title }}</h3>
+                        <p>{{ .Summary }}</p>
+                        <a href="{{ .Permalink }}" class="btn btn-tertiary">Read More</a>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-sections">
+        <div class="container">
+            <div class="section-grid">
+                <!-- Posts Section -->
+                <div class="section-column">
+                    <h3>Latest Posts</h3>
+                    <div class="content-list">
+                        {{ range first 3 (where .Site.Pages "Section" "posts") }}
+                        <div class="content-item">
+                            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                            <div class="content-item-details">
+                                <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                                <p>{{ .Summary }}</p>
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                    <a href="/posts" class="btn btn-secondary">View All Posts</a>
+                </div>
+
+                <!-- Tutorials Section -->
+                <div class="section-column">
+                    <h3>Recent Tutorials</h3>
+                    <div class="content-list">
+                        {{ range first 3 (where .Site.Pages "Section" "tutorials") }}
+                        <div class="content-item">
+                            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                            <div class="content-item-details">
+                                <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                                <p>{{ .Summary }}</p>
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                    <a href="/tutorials" class="btn btn-secondary">View All Tutorials</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social and CTA -->
+    <section class="social-cta">
+        <div class="container">
+            <div class="social-icons">
+                {{ range .Site.Params.social }}
+                <a href="{{ .url }}" target="_blank" aria-label="{{ .name }}" class="social-icon">
+                    <img src="/images/{{ .name | lower }}.png" alt="{{ .name }}">
+                </a>
+                {{ end }}
+            </div>
+            <div class="newsletter-cta">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to my newsletter for the latest content and insights.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Footer -->
+    
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; {{ now.Year }} {{ .Site.Title }} - All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

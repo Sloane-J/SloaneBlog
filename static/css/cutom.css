@@ -1,0 +1,36 @@
+/* custom.css */
+:root {
+    --primary-color: #3D52A0;
+    --secondary-color: #7091E6;
+    --background-color: #F0F4F8;
+    --text-color: #1A2B3C;
+    --link-color: #3D52A0;
+}
+
+/* Apply background and text colors globally */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Links styling */
+a {
+    color: var(--link-color);
+}
+
+/* Header and footer customization */
+.header, .footer {
+    background-color: var(--primary-color);
+}
+
+/* Buttons or primary UI elements */
+.btn, .btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Add styles for dark mode, if applicable */
+.dark-mode body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}

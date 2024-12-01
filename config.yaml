@@ -1,0 +1,94 @@
+baseURL: "https://sloaneblog.netlify.app"
+languageCode: "en-uk"
+title: "Syntax & Substance"
+theme: "stack"
+
+params:
+  description: "My personal blog about technology, life, and interesting thoughts"
+  favicon: "/images/Olivia.png"
+  colorScheme:
+    default: "custom"
+  mainSections: ["posts", "tutorials", "projects"]
+  disqusShortname: "Olivia"
+  emoji: "❤️"
+  Article: 
+    author: "Samuel Jnr"
+    enable_comments: true
+    share_buttons: true
+    categories: true
+    tags: true
+    math: true
+    toc: true
+  sidebar:
+    subtitle: "Olivia is on fire"
+    enabled: true
+    position: right
+    widgets:
+      - toc
+      - search
+      - recentPosts
+      - categories
+      - tags
+
+  customCSS: "/css/custom.css"
+  
+  customColors:
+    primary: "#3D52A0"
+    secondary: "#7091E6"
+    background: "#F0F4F8"
+    text: "#1A2B3C"
+    link: "#3D52A0"
+
+  enableDarkModeToggle: true
+  social:
+    - name: GitHub
+      url: "https://github.com/Sloane-J"
+    - name: Twitter
+      url: "https://twitter.com/sloane_jnr"
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+      params:
+        icon: home
+    - identifier: posts
+      name: Posts
+      url: /posts
+      weight: 2
+      params:
+        icon: archives
+    - identifier: tutorials
+      name: Tutorials
+      url: /tutorials
+      weight: 3
+      params:
+        icon: school
+    - identifier: projects
+      name: Projects
+      url: /projects
+      weight: 4
+      params:
+        icon: code
+    - identifier: about
+      name: About
+      url: /about
+      weight: 5
+      params:
+        icon: user
+    
+
+taxonomies:
+  category: "categories"
+  series: "series"
+  tag: "tags"
+  genre: genres
+
+permalinks:
+  post: "/:year/:month/:day/:slug/"
+
+markup:
+  defaultMarkdownHandler: goldmark
+

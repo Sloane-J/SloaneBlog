@@ -1,0 +1,14 @@
+/* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+$custom-primary: #3D52A0;
+$custom-secondary: #7091E6;
+$custom-background: #F0F4F8;
+$custom-text: #1A2B3C;
+$custom-link: #3D52A0;
+
+:root {
+  --color-primary: #{$custom-primary};
+  --color-secondary: #{$custom-secondary};
+  --color-background: #{$custom-background};
+  --color-text: #{$custom-text};
+  --color-link: #{$custom-link};
+}
