@@ -28,7 +28,7 @@ params:
   favicon: "/images/Olivia.png"
   colorScheme:
     toggle: true
-    default: auto
+    default: dark
     options:
       - "light"
       - "dark"
