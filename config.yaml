@@ -1,141 +1,146 @@
-baseURL: "sloaneplus-substance.netlify.app/"
+baseURL: "https://sloaneplus-substance.netlify.app/"
+theme: "stack"
 languageCode: "en-uk"
 title: "Syntax & Substance"
-theme: "stack"
 
 outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON
+ home:
+   - HTML
+   - RSS
+   - JSON
 
 outputFormats:
-  JSON:
-    baseName: index
-    isPlainText: true
-    mediaType: application/json
-    notAlternative: true
+ JSON:
+   baseName: index
+   isPlainText: true
+   mediaType: application/json
+   notAlternative: true
+
+mainSections:
+ - posts
+ - tutorials
+ - projects
+
+imaging:
+ resampleFilter: lanczos
+ quality: 75
+ anchor: smart
+
+enableRobotsTXT: true
+canonifyURLs: false
 
 params:
-  cover:
-    enable: true
-  content:
-    enable: true
-  search:
-    enable: true
-    type: basic
-  description: "My personal blog about technology, life, and interesting thoughts"
-  favicon: "/images/Olivia.png"
-  colorScheme:
-    toggle: true
-    default: dark
-    options:
-      - "light"
-      - "dark"
-  mainSections: ["posts", "tutorials", "projects"]
-  emoji: "❤️"
-  Article:
-    author: "Samuel Jnr"
-    share_buttons: true
-    categories: true
-    tags: true
-    math: true
-    toc: true
-  sidebar:
-    subtitle: "Olivia is on fire"
-    enabled: true
-    position: right
-    widgets:
-      - toc
-      - search
-      - recentPosts
-      - categories
-      - tags
-  comments:
-    enabled: true
-    provider: giscus
-    giscus:
-      repo: "Sloane-J/SloaneBlog"
-      repoID: "R_kgDONXOl1A"
-      category: "General"
-      categoryID: "DIC_kwDONXOl1M4Ckxju"
-      mapping: "pathname"
-      reactionsEnabled: 1
-      emitMetadata: 0
-      lang: "en"
-      theme: "preferred_color_scheme"
-  widgets:
-    homepage:
-      - type: search
-      - type: categories
-        params:
-          limit: 5
-      - type: tag-cloud
-    page:
-      - type: search
-      - type: categories
-        params:
-          limit: 5
-      - type: tag-cloud
+ cover:
+   enable: true
+ content:
+   enable: true
+ search:
+   enable: true
+   type: basic
+ description: "My personal blog about technology, life, and interesting thoughts"
+ favicon: "/images/Olivia.png"
+ emoji: "❤️"
+ Article:
+   author: "Samuel Jnr"
+   share_buttons: true
+   categories: true
+   tags: true
+   math: true
+   toc: true
+ sidebar:
+   subtitle: "Olivia is on fire"
+   enabled: true
+   position: right
+   widgets:
+     - toc
+     - search
+     - recentPosts
+     - categories
+     - tags
+ comments:
+   enabled: true
+   provider: giscus
+   giscus:
+     repo: "Sloane-J/SloaneBlog"
+     repoID: "R_kgDONXOl1A"
+     category: "General"
+     categoryID: "DIC_kwDONXOl1M4Ckxju"
+     mapping: "pathname"
+     reactionsEnabled: 1
+     emitMetadata: 0
+     lang: "en"
+     theme: "preferred_color_scheme"
+ widgets:
+   homepage:
+     - type: search
+     - type: categories
+       params:
+         limit: 5
+     - type: tag-cloud
+   page:
+     - type: search
+     - type: categories
+       params:
+         limit: 5
+     - type: tag-cloud
 
-  customCSS: "/css/custom.css"
-
-  enableDarkModeToggle: true
-  social:
-    - name: GitHub
-      url: "https://github.com/Sloane-J"
-    - name: Twitter
-      url: "https://twitter.com/sloane_jnr"
+ social:
+   - name: GitHub
+     url: "https://github.com/Sloane-J"
+   - name: Twitter
+     url: "https://twitter.com/sloane_jnr"
 
 menu:
-  main:
-    - identifier: home
-      name: Home
-      url: /
-      weight: 1
-      params:
-        icon: home
-    - identifier: posts
-      name: Posts
-      url: /posts
-      weight: 2
-      params:
-        icon: archives
-    - identifier: tutorials
-      name: Tutorials
-      url: /tutorials
-      weight: 3
-      params:
-        icon: school
-    - identifier: projects
-      name: Projects
-      url: /projects
-      weight: 4
-      params:
-        icon: code
-    - identifier: about
-      name: About
-      url: /about
-      weight: 5
-      params:
-        icon: user
-    - identifier: search
-      name: Search
-      url: /search
-      weight: 6
-      params:
-        icon: search
+ main:
+   - identifier: home
+     name: Home
+     url: /
+     weight: 1
+     params:
+       icon: home
+   - identifier: posts
+     name: Posts
+     url: /posts
+     weight: 2
+     params:
+       icon: archives
+   - identifier: tutorials
+     name: Tutorials
+     url: /tutorials
+     weight: 3
+     params:
+       icon: school
+   - identifier: projects
+     name: Projects
+     url: /projects
+     weight: 4
+     params:
+       icon: code
+   - identifier: about
+     name: About
+     url: /about
+     weight: 5
+     params:
+       icon: user
+   - identifier: search
+     name: Search
+     url: /search
+     weight: 6
+     params:
+       icon: search
 
 taxonomies:
-  category: "categories"
-  series: "series"
-  tag: "tags"
-  genre: genres
+ category: "categories"
+ series: "series"
+ tag: "tags"
+ genre: genres
 
 permalinks:
-  post: "/:year/:month/:day/:slug/"
+ post: "/:year/:month/:day/:slug/"
 
 markup:
-  defaultMarkdownHandler: goldmark
+ goldmark:
+   renderer:
+     unsafe: true
 
 enableGitinfo: true
