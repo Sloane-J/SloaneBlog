@@ -1,4 +1,4 @@
-baseURL: "https://sloaneblog.netlify.app"
+baseURL: ""
 languageCode: "en-uk"
 title: "Syntax & Substance"
 theme: "stack"
