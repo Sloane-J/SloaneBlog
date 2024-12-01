@@ -2,5 +2,5 @@
   command = "hugo"
   publish = "public"
 
-[context.production.environment]
-  HUGO_VERSION = "0.112.0"  # Change this to the version the theme supports
+[build.environment]
+  HUGO_VERSION = "0.139.2"
