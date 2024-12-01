@@ -7,13 +7,11 @@ params:
   description: "My personal blog about technology, life, and interesting thoughts"
   favicon: "/images/Olivia.png"
   colorScheme:
-    default: "custom"
+    default: "auto"
   mainSections: ["posts", "tutorials", "projects"]
-  disqusShortname: "Olivia"
   emoji: "❤️"
-  Article: 
+  Article:
     author: "Samuel Jnr"
-    enable_comments: true
     share_buttons: true
     categories: true
     tags: true
@@ -29,9 +27,22 @@ params:
       - recentPosts
       - categories
       - tags
+  comments:
+    enabled: true
+    provider: giscus
+    giscus:
+      repo: "Sloane-J/SloaneBlog"
+      repoID: "R_kgDONXOl1A"
+      category: "General"
+      categoryID: "DIC_kwDONXOl1M4Ckxju"
+      mapping: "pathname"
+      reactionsEnabled: 1
+      emitMetadata: 0
+      lang: "en"
+      theme: "preferred_color_scheme"
 
   customCSS: "/css/custom.css"
-  
+
   customColors:
     primary: "#3D52A0"
     secondary: "#7091E6"
@@ -78,7 +89,6 @@ menu:
       weight: 5
       params:
         icon: user
-    
 
 taxonomies:
   category: "categories"
@@ -91,4 +101,3 @@ permalinks:
 
 markup:
   defaultMarkdownHandler: goldmark
-
