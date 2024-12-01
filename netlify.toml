@@ -4,3 +4,9 @@
 
 [build.environment]
   HUGO_VERSION = "0.139.2"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
+    Referrer-Policy = "no-referrer-when-downgrade"
