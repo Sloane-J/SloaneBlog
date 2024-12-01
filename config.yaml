@@ -3,11 +3,27 @@ languageCode: "en-uk"
 title: "Syntax & Substance"
 theme: "stack"
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+outputFormats:
+  JSON:
+    baseName: index
+    isPlainText: true
+    mediaType: application/json
+    notAlternative: true
+
 params:
+  search:
+    enable: true
+    type: basic
   description: "My personal blog about technology, life, and interesting thoughts"
   favicon: "/images/Olivia.png"
   colorScheme:
-    default: "auto"
+    default: "custom"
   mainSections: ["posts", "tutorials", "projects"]
   emoji: "❤️"
   Article:
@@ -40,6 +56,16 @@ params:
       emitMetadata: 0
       lang: "en"
       theme: "preferred_color_scheme"
+  widgets:
+    homepage:
+      - type: search
+      - type: categories
+        params:
+          limit: 5
+      - type: tag-cloud
+    page:
+      - type: search
+      
 
   customCSS: "/css/custom.css"
 
@@ -89,6 +115,12 @@ menu:
       weight: 5
       params:
         icon: user
+    - identifier: search
+      name: Search
+      url: /search
+      weight: 6
+      params:
+        icon: search
 
 taxonomies:
   category: "categories"
@@ -101,3 +133,5 @@ permalinks:
 
 markup:
   defaultMarkdownHandler: goldmark
+
+enableGitinfo: true

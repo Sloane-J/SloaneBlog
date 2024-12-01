@@ -1,0 +1,103 @@
+{{ define "main" }}
+<div class="search-container">
+    <h1>{{ .Title }}</h1>
+    <input type="text" id="search-input" placeholder="Search...">
+    <div id="search-results"></div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+
+        // Debugging: Log fetch details
+        async function performSearch() {
+            try {
+                console.log('Attempting to fetch index.json');
+                const response = await fetch('/index.json');
+                
+                // Debugging: Check response
+                console.log('Response status:', response.status);
+                console.log('Response headers:', response.headers);
+
+                // Check content type
+                const contentType = response.headers.get('content-type');
+                console.log('Content-Type:', contentType);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                if (!contentType || !contentType.includes('application/json')) {
+                    const text = await response.text();
+                    console.error('Unexpected content:', text);
+                    throw new Error('Not a valid JSON response');
+                }
+
+                const index = await response.json();
+                
+                console.log('Total pages indexed:', index.length);
+
+                searchInput.addEventListener('input', function() {
+                    const query = this.value.toLowerCase();
+                    if (query.length < 2) {
+                        searchResults.innerHTML = '';
+                        return;
+                    }
+
+                    const results = index.filter(page => 
+                        page.title.toLowerCase().includes(query) || 
+                        page.content.toLowerCase().includes(query)
+                    );
+
+                    console.log('Search results:', results);
+
+                    searchResults.innerHTML = results.length > 0 
+                        ? results.map(result => `
+                            <div class="search-result">
+                                <a href="${result.permalink}">${result.title}</a>
+                                <span class="result-type">${result.type}</span>
+                            </div>
+                        `).join('') 
+                        : '<p>No results found</p>';
+                });
+            } catch (error) {
+                console.error('Search index loading error:', error);
+                searchResults.innerHTML = `Error loading search index: ${error.message}`;
+            }
+        }
+
+        performSearch();
+    });
+    </script>
+
+    <style>
+    .search-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    #search-input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    .search-result {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+    }
+    .search-result a {
+        text-decoration: none;
+        color: #333;
+    }
+    .result-type {
+        color: #666;
+        font-size: 0.8em;
+    }
+    </style>
+</div>
+{{ end }}

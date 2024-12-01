@@ -1,0 +1,14 @@
+{{- $index := slice -}}
+{{- range .Site.Pages -}}
+    {{- if and (not .IsHome) (not .IsSection) (not .Draft) (ne .Type "search") (or (eq .Type "posts") (eq .Type "tutorials") (eq .Type "projects")) -}}
+        {{- $index = $index | append (dict 
+            "title" .Title 
+            "content" (.Plain | default .Summary | htmlUnescape | lower)
+            "permalink" .Permalink
+            "type" .Type
+            "tags" .Params.tags
+            "categories" .Params.categories
+        ) -}}
+    {{- end -}}
+{{- end -}}
+{{- $index | jsonify -}}
