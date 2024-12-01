@@ -1,10 +1,19 @@
-/* custom.css */
+/* Light Mode Styles */
 :root {
     --primary-color: #3D52A0;
     --secondary-color: #7091E6;
     --background-color: #F0F4F8;
     --text-color: #1A2B3C;
     --link-color: #3D52A0;
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+    --primary-color: #1E1E2F;
+    --secondary-color: #4A4A6A;
+    --background-color: #1A1A2E;
+    --text-color: #E0E0E0;
+    --link-color: #7091E6;
 }
 
 /* Apply background and text colors globally */
@@ -21,16 +30,11 @@ a {
 /* Header and footer customization */
 .header, .footer {
     background-color: var(--primary-color);
+    color: var(--text-color);
 }
 
 /* Buttons or primary UI elements */
 .btn, .btn-primary {
     background-color: var(--secondary-color);
-    color: var(--text-color);
-}
-
-/* Add styles for dark mode, if applicable */
-.dark-mode body {
-    background-color: var(--background-color);
     color: var(--text-color);
 }

@@ -8,6 +8,10 @@ weight: 2
 summary: "This is a short description of the post."
 featured: true
 image: "/images/Olivia.png"
+cover:
+  image: "/images/Olivia.png"
+  alt: "This is an image"
+  caption: "This is a caption of the image"
 ---
 
 # Files
@@ -16,6 +20,9 @@ StackEdit stores your files in your browser, which means all your files are auto
 
 - The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.
 	> To start syncing your workspace, just sign in with Google in the menu.
+
+![Alt text for the image](images/Olivia.png)
+
 
 - The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.
 	> Before starting to sync files, you must link an account in the **Synchronize** sub-menu.

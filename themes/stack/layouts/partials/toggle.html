@@ -1,0 +1,32 @@
+<select id="color-scheme-selector">
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+  <option value="auto">Auto</option>
+</select>
+
+<script>
+  const themeSelector = document.getElementById('color-scheme-selector');
+  const savedTheme = localStorage.getItem('theme') || "{{ .Site.Params.colorScheme.default }}";
+
+  // Apply saved or default theme
+  if (savedTheme !== 'auto') {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  // Set selector value
+  themeSelector.value = savedTheme;
+
+  // Update theme on user selection
+  themeSelector.addEventListener('change', () => {
+    const selectedTheme = themeSelector.value;
+    if (selectedTheme === 'auto') {
+      localStorage.removeItem('theme');
+      window.location.reload(); // Respects system preference
+    } else {
+      document.documentElement.setAttribute('data-theme', selectedTheme);
+      localStorage.setItem('theme', selectedTheme);
+    }
+  });
+</script>

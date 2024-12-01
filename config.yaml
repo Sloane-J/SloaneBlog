@@ -17,13 +17,21 @@ outputFormats:
     notAlternative: true
 
 params:
+  cover:
+    enable: true
+  content:
+    enable: true
   search:
     enable: true
     type: basic
   description: "My personal blog about technology, life, and interesting thoughts"
   favicon: "/images/Olivia.png"
   colorScheme:
-    default: "custom"
+    toggle: true
+    default: auto
+    options:
+      - "light"
+      - "dark"
   mainSections: ["posts", "tutorials", "projects"]
   emoji: "❤️"
   Article:
@@ -65,6 +73,10 @@ params:
       - type: tag-cloud
     page:
       - type: search
+      - type: categories
+        params:
+          limit: 5
+      - type: tag-cloud
       
 
   customCSS: "/css/custom.css"
