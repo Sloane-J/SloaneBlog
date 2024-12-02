@@ -1,45 +1,62 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Site.Title }}</title>
     <link rel="icon" href="{{ .Site.Params.favicon }}" type="image/png">
     
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/customCSS.css">
-   
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-900 text-gray-100 antialiased dark:bg-gray-900">
     <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="container">
-            <div class="logo">
-                <a href="/">{{ .Site.Title }}</a>
+    <nav class="sticky top-0 z-50 bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <img src="/images/Olivia.png" alt="Logo" class="h-10 w-10 rounded-full">
+                <a href="/" class="text-2xl font-bold text-gray-100 hover:text-blue-400 transition">
+                    {{ .Site.Title }}
+                </a>
             </div>
-            <ul class="nav-links">
-                <li><a href="/posts">Posts</a></li>
-                <li><a href="/tutorials">Tutorials</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/about">About</a></li>
+            <ul class="flex space-x-6">
+                <li><a href="/posts" class="text-gray-300 hover:text-blue-400 transition">Posts</a></li>
+                <li><a href="/tutorials" class="text-gray-300 hover:text-blue-400 transition">Tutorials</a></li>
+                <li><a href="/projects" class="text-gray-300 hover:text-blue-400 transition">Projects</a></li>
+                <li><a href="/about" class="text-gray-300 hover:text-blue-400 transition">About</a></li>
             </ul>
         </div>
     </nav>
-    
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-image">
-                    <img src="/images/Olivia.png" alt="{{ .Site.Params.author }}">
+    <section class="bg-gradient-to-br from-gray-800 to-gray-900 py-16">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="flex-shrink-0">
+                    <img src="/images/Olivia.png" alt="{{ .Site.Params.author }}" class="w-64 h-64 rounded-full object-cover border-4 border-gray-700 shadow-lg">
                 </div>
-                <div class="hero-text">
-                    <h1>{{ .Site.Params.heroTitle | default "Welcome to My Blog" }}</h1>
-                    <p>{{ .Site.Params.description }}</p>
-                    <div class="hero-cta">
-                        <a href="/about" class="btn btn-primary">Learn More About Me</a>
-                        <a href="/posts" class="btn btn-secondary">View Latest Posts</a>
+                <div class="max-w-2xl">
+                    <h1 class="text-4xl font-bold text-gray-100 mb-4">
+                        {{ .Site.Params.heroTitle | default "Welcome to My Blog" }}
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-6">
+                        {{ .Site.Params.description }}
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="/about" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                            Learn More About Me
+                        </a>
+                        <a href="/posts" class="px-6 py-3 border border-blue-600 text-blue-400 rounded-lg hover:bg-blue-600/10 transition">
+                            View Latest Posts
+                        </a>
                     </div>
                 </div>
             </div>
@@ -47,94 +64,114 @@
     </section>
 
     <!-- Featured Content -->
-    <section class="featured-content">
-        <div class="container">
-            <h2>Featured Highlights</h2>
-            <div class="featured-grid">
-                {{ range first 3 (where .Site.Pages "Params.featured" true) }}
-                <div class="featured-card">
-                    <img src="{{ .Params.image }}" alt="{{ .Title }}">
-                    <div class="featured-card-content">
-                        <h3>{{ .Title }}</h3>
-                        <p>{{ .Summary }}</p>
-                        <a href="{{ .Permalink }}" class="btn btn-tertiary">Read More</a>
-                    </div>
-                </div>
-                {{ end }}
-            </div>
+   {{ with index (where .Site.Pages "Params.featured" true) 0 }}
+  <section class="py-16 bg-gray-800">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-100">Featured Highlights</h2>
+      <div class="grid grid-cols-3 gap-8">
+        <div class="col-span-2 bg-gray-700 rounded-lg shadow-md overflow-hidden">
+          <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-3 text-gray-100">{{ .Title }}</h3>
+            <p class="text-gray-400 mb-4">{{ .Summary }}</p>
+            <a href="{{ .Permalink }}" class="text-blue-400 hover:underline">Read More</a>
+          </div>
         </div>
-    </section>
+        <div class="space-y-8">
+          {{ range first 2 (after 1 (where $.Site.Pages "Params.featured" true)) }}
+            <div class="bg-gray-700 rounded-lg shadow-md overflow-hidden">
+              <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-32 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2 text-gray-100">{{ .Title }}</h3>
+                <p class="text-gray-400 mb-2">{{ .Summary }}</p>
+                <a href="{{ .Permalink }}" class="text-blue-400 hover:underline">Read More</a>
+              </div>
+              
+            </div>
+          {{ end }}
+        </div>
+        
+      </div>
+    </div>
+  </section>
+{{ end }}
 
     <!-- Content Sections -->
-    <section class="content-sections">
-        <div class="container">
-            <div class="section-grid">
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 gap-12">
                 <!-- Posts Section -->
-                <div class="section-column">
-                    <h3>Latest Posts</h3>
-                    <div class="content-list">
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 text-gray-100">Latest Posts</h3>
+                    <div class="space-y-6">
                         {{ range first 3 (where .Site.Pages "Section" "posts") }}
-                        <div class="content-item">
-                            <img src="{{ .Params.image }}" alt="{{ .Title }}">
-                            <div class="content-item-details">
-                                <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-                                <p>{{ .Summary }}</p>
+                        <div class="flex items-start space-x-4 bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg transition">
+                            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-24 h-24 rounded-md object-cover">
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">
+                                    <a href="{{ .Permalink }}" class="text-gray-100 hover:text-blue-400">{{ .Title }}</a>
+                                </h4>
+                                <p class="text-gray-400">{{ .Summary }}</p>
                             </div>
                         </div>
                         {{ end }}
                     </div>
-                    <a href="/posts" class="btn btn-secondary">View All Posts</a>
+                    <a href="/posts" class="mt-6 inline-block px-5 py-2 bg-gray-800 text-blue-400 rounded-lg hover:bg-gray-700">
+                        View All Posts
+                    </a>
                 </div>
 
                 <!-- Tutorials Section -->
-                <div class="section-column">
-                    <h3>Recent Tutorials</h3>
-                    <div class="content-list">
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 text-gray-100">Recent Tutorials</h3>
+                    <div class="space-y-6">
                         {{ range first 3 (where .Site.Pages "Section" "tutorials") }}
-                        <div class="content-item">
-                            <img src="{{ .Params.image }}" alt="{{ .Title }}">
-                            <div class="content-item-details">
-                                <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-                                <p>{{ .Summary }}</p>
+                        <div class="flex items-start space-x-4 bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg transition">
+                            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-24 h-24 rounded-md object-cover">
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">
+                                    <a href="{{ .Permalink }}" class="text-gray-100 hover:text-blue-400">{{ .Title }}</a>
+                                </h4>
+                                <p class="text-gray-400">{{ .Summary }}</p>
                             </div>
                         </div>
                         {{ end }}
                     </div>
-                    <a href="/tutorials" class="btn btn-secondary">View All Tutorials</a>
+                    <a href="/tutorials" class="mt-6 inline-block px-5 py-2 bg-gray-800 text-blue-400 rounded-lg hover:bg-gray-700">
+                        View All Tutorials
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Social and CTA -->
-    <section class="social-cta">
-        <div class="container">
-            <div class="social-icons">
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-12">
                 {{ range .Site.Params.social }}
-                <a href="{{ .url }}" target="_blank" aria-label="{{ .name }}" class="social-icon">
-                    <img src="/images/{{ .name | lower }}.png" alt="{{ .name }}">
+                <a href="{{ .url }}" target="_blank" class="text-gray-400 hover:text-blue-400 transition">
+                    <img src="/images/{{ .name | lower }}.png" alt="{{ .name }}" class="w-8 h-8 hover:scale-110 transition">
                 </a>
                 {{ end }}
             </div>
-            <div class="newsletter-cta">
-                <h3>Stay Updated</h3>
-                <p>Subscribe to my newsletter for the latest content and insights.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
+            <div class="max-w-xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4 text-gray-100">Stay Updated</h3>
+                <p class="text-gray-400 mb-8">Subscribe to my newsletter for the latest content and insights.</p>
+                <form class="flex max-w-md mx-auto">
+                    <input type="email" placeholder="Enter your email" required class="flex-grow px-4 py-3 border border-gray-700 bg-gray-800 text-gray-100 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition">
+                        Subscribe
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    
     <!-- Footer -->
-    
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; {{ now.Year }} {{ .Site.Title }} - All Rights Reserved</p>
-            </div>
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; {{ now.Year }} {{ .Site.Title }} - All Rights Reserved</p>
         </div>
     </footer>
 </body>
