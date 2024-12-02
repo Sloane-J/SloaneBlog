@@ -11,7 +11,9 @@ summary: "This is the first post"
 
 <style>
     figure img {
-        outline:2px solid black;
+
+        width: auto;
+        height: auto;
     }
 </style>
 
