@@ -1,7 +1,7 @@
 baseURL: "https://sloaneplus-substance.netlify.app/"
 theme: "stack"
 languageCode: "en-uk"
-title: "Syntax & Substance"
+title: "Sloane's Blog"
 
 outputs:
  home:
