@@ -1,9 +1,9 @@
 ---
 title: "The Real Impact of Screen Time on Mental Health and Relationships"
+summary: "Explore the profound effects of screen time on mental health, relationships, and personal well-being in the digital age."
 date: 2024-02-12
-author: [Sloane]
+author: ["Sloane"]
 draft: false
-description: "Explore the profound effects of screen time on mental health, relationships, and personal well-being in the digital age."
 categories:
   - Mental Health
   - Technology
@@ -14,13 +14,16 @@ tags:
   - digital anxiety
   - mental health
   - relationships
-featured_image: true
+featured: true
 image: "/images/digital-connection-header.webp"
 image_credit: 
-  source: "pixabay"
+  source: "Pixabay"
+  url: "https://pixabay.com"
 seo:
   keywords: "screen time impact, digital anxiety, social media depression, mental health technology"
+weight: 1
 ---
+
 
 # The Real Impact of Screen Time on Mental Health and Relationships
 
