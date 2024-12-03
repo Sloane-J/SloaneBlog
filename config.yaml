@@ -48,7 +48,7 @@ params:
    math: true
    toc: true
  sidebar:
-   subtitle: "Olivia is on fire"
+   subtitle: "Insights on Technology, Science, and More"
    enabled: true
    position: right
    widgets:

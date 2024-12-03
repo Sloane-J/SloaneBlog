@@ -1,6 +1,6 @@
 ---
 title: "Ghana's Digital Financial Revolution: Mobile Money Transactions Soar to GHC 1.775 Trillion"
-summary: "An in-depth look at Ghana's mobile money landscape in 2024, exploring the transformative impact of digital financial services"
+summary: "An in-depth look at Ghana's mobile money landscape in 2024, exploring the transformative impact of digital financial services."
 date: 2024-12-03
 author: "Samuel Dorkey"
 tags: 
@@ -15,14 +15,16 @@ categories:
 featured: true
 image: "/images/Mobile Money Connecting Ghanaians Digitally.webp"
 image_credit:
-    source: Google
-reading_time: 5
+    source: "gettyimages"
+    url: 'https://gettyimages.com'
 language: en
-publication: "Sloane's Blog"
-publication_link: "https://techlabari.com/mobile-money-transactions-in-ghana-achieve-a-record-high-ghc-2-trillion/"
 draft: false
 seo:
-  keywords: "mobile money, Ghana, economic innovation, financial technology"
+  keywords: 
+    - mobile money
+    - Ghana
+    - economic innovation
+    - financial technology
 weight: 1
 ---
 
@@ -77,4 +79,4 @@ The surge to nearly GHC 1.775 trillion in mobile money transactions illustrates 
 
 ---
 
-**Originally published on Tech Labari: [Mobile Money Transactions in Ghana Achieve a Record High](https://techlabari.com/mobile-money-transactions-in-ghana-achieve-a-record-high-ghc-2-trillion/)**
+**First reported by Tech Labari: [Mobile Money Transactions in Ghana Achieve a Record High](https://techlabari.com/mobile-money-transactions-in-ghana-achieve-a-record-high-ghc-2-trillion/)**
