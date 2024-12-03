@@ -12,7 +12,6 @@ tags:
 categories:
     - Financial Technology
     - Technology
-slug: ghana-mobile-money-transactions-2024
 featured: true
 image: "/images/Mobile Money Connecting Ghanaians Digitally.webp"
 image_credit:
@@ -28,7 +27,7 @@ weight: 1
 ---
 
 
-# Mobile Money Transactions in Ghana Achieve a Record High GHC 2 Tr
+# Mobile Money Transactions in Ghana Achieve a Record High GHC 2 Trillion
 
 **Transactions in the First Eight Months of 2024 Totalled GHC 1.775 Trillion**
 
@@ -44,7 +43,7 @@ As more people become accustomed to using mobile money services, it's expected t
 
 The surge towards this impressive GHC 2 trillion mark encapsulates a broader movement towards digital finance in Ghana. While the total financial transactions have soared, it's crucial to think about what this means for businesses and everyday people alike. Small vendors now can accept payments easily, and families can send money to loved ones in remote areas with just a few taps on their phones.
 
-{{< figure src="/images/Mobile Money Connecting Ghanaians Digitally.webp" alt="Ghanaians from different backgrounds using mobile money services" class="img-class" caption=Mobile Money Connecting Ghanaians Digitally""  >}}
+{{< figure src="/images/Mobile Money Connecting Ghanaians Digitally.webp" alt="Ghanaians from different backgrounds using mobile money services" class="img-class" caption="Mobile Money Connecting Ghanaians Digitally" >}}
 
 The collaborative efforts of mobile service providers and the government in promoting mobile money have also had a significant impact. Initiatives like the no-fee transfer promotions and financial literacy campaigns have certainly played a role in encouraging users to embrace the shift. With so many options available, from Momo to Tigo Money, it's fascinating to see how these services have changed shopping and saving habits for many Ghanaians.
 
