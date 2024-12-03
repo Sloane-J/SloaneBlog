@@ -130,6 +130,7 @@
                             <div class="p-4">
                                 <h3 class="text-lg font-semibold mb-2 text-gray-100">{{ .Title }}</h3>
                                 <p class="text-gray-300 mb-4">{{ truncate 100 .Summary }}</p>
+                                <p>{{ .Permalink }}</p> <!-- Debugging Permalink -->
                                 <a href="{{ .Permalink }}" class="inline-block px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
                                     Read More
                                 </a>
@@ -137,6 +138,7 @@
                         </div>
                     {{ end }}
                 </div>
+                
             </div>
         </div>
     </section>
