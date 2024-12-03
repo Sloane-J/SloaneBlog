@@ -6,8 +6,8 @@
     <title>{{ .Site.Title }}</title>
     <link rel="icon" href="{{ .Site.Params.favicon }}" type="image/png">
     
-    <!-- Tailwind CSS with JIT mode for better performance -->
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Custom CSS -->
     <style>
@@ -15,71 +15,50 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Optimize gradients with fewer color stops */
-        .bg-gradient-optimized {
-            background: linear-gradient(to bottom right, #1f2937, #111827);
-        }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 antialiased dark:bg-gray-900 min-w-[320px]">
-  
-   
-<!-- Navigation -->
-<nav class="sticky top-0 z-50 bg-gray-800 shadow-md">
-    <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between">
-        <div class="flex items-center justify-between w-full md:w-auto">
-            <div class="flex items-center space-x-4">
-                <img 
-                    src="/images/Olivia.png" 
-                    alt="Logo" 
-                    class="h-10 w-10 rounded-full"
-                    onerror="this.onerror=null; this.src='/images/fallback-logo.png'"
-                    loading="lazy"
-                >
-                <a href="/" class="text-2xl font-bold text-gray-100 hover:text-blue-400 transition">
-                    {{ .Site.Title }}
-                </a>
+<body class="bg-gray-900 text-gray-100 antialiased dark:bg-gray-900">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center justify-between w-full md:w-auto">
+                <div class="flex items-center space-x-4">
+                    <img src="/images/Olivia.png" alt="Logo" class="h-10 w-10 rounded-full">
+                    <a href="/" class="text-2xl font-bold text-gray-100 hover:text-blue-400 transition">
+                        {{ .Site.Title }}
+                    </a>
+                </div>
+                <button class="md:hidden text-white" id="mobile-menu-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
-            <button class="md:hidden text-white" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
+            <ul class="hidden md:flex space-x-6 mt-4 md:mt-0" id="mobile-menu">
+                <li><a href="/posts" class="text-gray-300 hover:text-blue-400 transition">Posts</a></li>
+                <li><a href="/tutorials" class="text-gray-300 hover:text-blue-400 transition">Tutorials</a></li>
+                <li><a href="/projects" class="text-gray-300 hover:text-blue-400 transition">Projects</a></li>
+                <li><a href="/about" class="text-gray-300 hover:text-blue-400 transition">About</a></li>
+            </ul>
         </div>
-        <ul class="hidden md:flex space-x-6 mt-4 md:mt-0 md:flex-row flex-col w-full md:w-auto" id="mobile-menu">
-            <li class="w-full md:w-auto text-center md:text-left">
-                <a href="/posts" class="block md:inline text-gray-300 hover:text-blue-400 transition py-2 md:py-0">Posts</a>
-            </li>
-            <li class="w-full md:w-auto text-center md:text-left">
-                <a href="/tutorials" class="block md:inline text-gray-300 hover:text-blue-400 transition py-2 md:py-0">Tutorials</a>
-            </li>
-            <li class="w-full md:w-auto text-center md:text-left">
-                <a href="/projects" class="block md:inline text-gray-300 hover:text-blue-400 transition py-2 md:py-0">Projects</a>
-            </li>
-            <li class="w-full md:w-auto text-center md:text-left">
-                <a href="/about" class="block md:inline text-gray-300 hover:text-blue-400 transition py-2 md:py-0">About</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-optimized py-16 px-4 sm:px-6 lg:px-8">
-        <div class="container mx-auto">
+    <section class="bg-gradient-to-br from-gray-800 to-gray-900 py-16">
+        <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div class="space-y-6">
                     <div class="bg-gray-700 rounded-lg p-6 shadow-lg">
                         <h2 class="text-2xl font-semibold text-gray-100 mb-4">Latest Insights</h2>
                         {{ with first 1 (where .Site.Pages "Type" "posts") }}
-   {{ if .Permalink }}
-       <a href="{{ .Permalink }}" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
-           Read Article
-       </a>
-   {{ else }}
-       <p>No articles available.</p>
-   {{ end }}
-{{ end }}
-
+                            {{ range . }}
+                                <h3 class="text-xl text-blue-300 mb-2">{{ .Title }}</h3>
+                                <p class="text-gray-300 mb-4">{{ truncate 150 .Summary }}</p>
+                                <a href="{{ .Permalink }}" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
+                                    Read Article
+                                </a>
+                            {{ end }}
+                        {{ end }}
                     </div>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                         <a href="/posts" class="text-center px-6 py-3 border border-blue-600 text-blue-400 rounded-lg hover:bg-blue-600/10 transition">
@@ -108,6 +87,7 @@
     </section>
 
     <!-- Featured Content -->
+    {{ if gt (len (where .Site.Pages "Params.featured" true)) 0 }}
     {{ with index (where .Site.Pages "Params.featured" true) 0 }}
     <section class="bg-gradient-to-br from-gray-800 to-gray-900 py-16">
         <div class="container mx-auto px-4">
@@ -130,7 +110,6 @@
                             <div class="p-4">
                                 <h3 class="text-lg font-semibold mb-2 text-gray-100">{{ .Title }}</h3>
                                 <p class="text-gray-300 mb-4">{{ truncate 100 .Summary }}</p>
-                                <p>{{ .Permalink }}</p> <!-- Debugging Permalink -->
                                 <a href="{{ .Permalink }}" class="inline-block px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
                                     Read More
                                 </a>
@@ -138,10 +117,10 @@
                         </div>
                     {{ end }}
                 </div>
-                
             </div>
         </div>
     </section>
+    {{ end }}
     {{ end }}
 
     <!-- Tutorials Section -->
@@ -153,20 +132,19 @@
                     <h3 class="text-2xl font-bold mb-8 text-gray-100">Articles</h3>
                     <div class="space-y-6">
                         {{ range first 3 (where .Site.Pages "Section" "posts") }}
-    <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 bg-gray-700 p-4 rounded-lg shadow-lg hover:scale-105 transition">
-        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full sm:w-24 h-24 rounded-md object-cover">
-        <div>
-            <h4 class="text-lg font-semibold mb-2">
-                <a href="{{ .Permalink | default "/404" }}" class="text-gray-100 hover:text-blue-300">{{ .Title }}</a>
-            </h4>
-            <p class="text-gray-300 mb-4">{{ truncate 150 .Summary }}</p>
-            <a href="{{ .Permalink | default "/404" }}" class="inline-block px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
-                Read More
-            </a>
-        </div>
-    </div>
-{{ end }}
-
+                        <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 bg-gray-700 p-4 rounded-lg shadow-lg hover:scale-105 transition">
+                            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full sm:w-24 h-24 rounded-md object-cover">
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">
+                                    <a href="{{ .Permalink }}" class="text-gray-100 hover:text-blue-300">{{ .Title }}</a>
+                                </h4>
+                                <p class="text-gray-300 mb-4">{{ truncate 150 .Summary }}</p>
+                                <a href="{{ .Permalink }}" class="inline-block px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                        {{ end }}
                     </div>
                     <a href="/posts" class="mt-6 inline-block px-6 py-3 border border-blue-600 text-blue-400 rounded-lg hover:bg-blue-600/10 transition">
                         View All Posts
@@ -178,22 +156,19 @@
                     <h3 class="text-2xl font-bold mb-8 text-gray-100">Tutorials</h3>
                     <div class="space-y-6">
                         {{ range first 3 (where .Site.Pages "Section" "tutorials") }}
-                        {{/* Debug output */}}
-                        <p>{{ .Permalink }}</p>
                         <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 bg-gray-700 p-4 rounded-lg shadow-lg hover:scale-105 transition">
                             <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full sm:w-24 h-24 rounded-md object-cover">
                             <div>
                                 <h4 class="text-lg font-semibold mb-2">
-                                    <a href="{{ .Permalink | default "/404" }}" class="text-gray-100 hover:text-blue-300">{{ .Title }}</a>
+                                    <a href="{{ .Permalink }}" class="text-gray-100 hover:text-blue-300">{{ .Title }}</a>
                                 </h4>
                                 <p class="text-gray-300 mb-4">{{ truncate 150 .Summary }}</p>
-                                <a href="{{ .Permalink | default "/404" }}" class="inline-block px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
+                                <a href="{{ .Permalink }}" class="inline-block px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
                                     Read More
                                 </a>
                             </div>
                         </div>
-                    {{ end }}
-                    
+                        {{ end }}
                     </div>
                     <a href="/tutorials" class="mt-6 inline-block px-6 py-3 border border-blue-600 text-blue-400 rounded-lg hover:bg-blue-600/10 transition">
                         View All Tutorials
@@ -204,23 +179,12 @@
     </section>
 
     <!-- Social and CTA -->
-    <section class="bg-gradient-optimized py-16">
+    <section class="bg-gradient-to-br from-gray-800 to-gray-900 py-16">
         <div class="container mx-auto px-4 text-center">
             <div class="flex justify-center space-x-6 mb-12">
                 {{ range .Site.Params.social }}
-                <a 
-                    href="{{ .url }}" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="text-gray-400 hover:text-blue-300 transition transform hover:scale-110"
-                >
-                    <img 
-                        src="/images/{{ .name | lower }}.png" 
-                        alt="{{ .name }}" 
-                        class="w-8 h-8 filter brightness-0 invert"
-                        loading="lazy"
-                        onerror="this.onerror=null; this.src='/images/fallback-social.png'"
-                    >
+                <a href="{{ .url }}" target="_blank" class="text-gray-400 hover:text-blue-300 transition transform hover:scale-110">
+                    <img src="/images/{{ .name | lower }}.png" alt="{{ .name }}" class="w-8 h-8 filter brightness-0 invert">
                 </a>
                 {{ end }}
             </div>
@@ -238,12 +202,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-gray-400 py-8">
+    <footer class="bg-gradient-to-br from-black to-gray-900 text-gray-400 py-8">
         <div class="container mx-auto px-4 text-center">
             <p>&copy; {{ now.Year }} {{ .Site.Title }} - All Rights Reserved</p>
         </div>
     </footer>
 
+    <!-- Mobile Menu Toggle Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -251,13 +216,6 @@
 
             mobileMenuToggle.addEventListener('click', function() {
                 mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('bg-gray-800');
-                mobileMenu.classList.toggle('absolute');
-                mobileMenu.classList.toggle('left-0');
-                mobileMenu.classList.toggle('right-0');
-                mobileMenu.classList.toggle('top-full');
-                mobileMenu.classList.toggle('p-4');
-                mobileMenu.classList.toggle('shadow-lg');
             });
         });
     </script>
