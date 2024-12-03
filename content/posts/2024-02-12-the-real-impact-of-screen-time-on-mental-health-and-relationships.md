@@ -1,7 +1,7 @@
 ---
 title: "The Real Impact of Screen Time on Mental Health and Relationships"
 summary: "Explore the profound effects of screen time on mental health, relationships, and personal well-being in the digital age."
-date: 2024-02-12
+date: 2024-12-02
 author: ["Sloane"]
 draft: false
 categories:
