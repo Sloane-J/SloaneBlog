@@ -30,6 +30,7 @@ enableRobotsTXT: true
 canonifyURLs: false
 
 params:
+  amp: true
   logo: "/images/Olivia.png"
   cover:
     enable: true
@@ -163,5 +164,3 @@ sitemap:
 
 minify: 
   enable: true
-
-enableAMP: true
