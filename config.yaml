@@ -160,3 +160,6 @@ sitemap:
     name = "Samuel D. Jnr"
     jobTitle = "Tech Blogger"
     description = "Writer and technology enthusiast sharing insights on science and technology"
+    
+minify: 
+  enable: true
