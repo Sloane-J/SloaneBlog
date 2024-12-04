@@ -13,6 +13,9 @@
 <meta name="twitter:description" content="{{ .Params.description }}">
 <meta name="twitter:image" content="{{ .Params.image }}">
 
+<link rel="sitemap" type="application/xml" href="https://syntaxplus-substance.netlify.app//sitemap.xml" />
+
+
 <!-- Description and Keywords -->
 {{- $description := partialCached "data/description" . .RelPermalink -}}
 <meta name='description' {{ printf "content=%q" $description | safeHTMLAttr }}>
