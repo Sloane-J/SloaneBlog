@@ -1,148 +1,158 @@
 baseURL: "https://syntaxplus-substance.netlify.app/"
 theme: "stack"
-languageCode: "en-uk"
+languageCode: "en-GB"  # Changed from "en-uk" to "en-GB"
 title: "Sloane's Blog"
 
 outputs:
- home:
-   - HTML
-   - RSS
-   - JSON
+  home:
+    - HTML
+    - RSS
+    - JSON
 
 outputFormats:
- JSON:
-   baseName: index
-   isPlainText: true
-   mediaType: application/json
-   notAlternative: true
+  JSON:
+    baseName: index
+    isPlainText: true
+    mediaType: application/json
+    notAlternative: true
 
 mainSections:
- - posts
- - tutorials
- - projects
+  - posts
+  - tutorials
+  - projects
 
 imaging:
- resampleFilter: lanczos
- quality: 75
- anchor: smart
+  resampleFilter: lanczos
+  quality: 75
+  anchor: smart
 
 enableRobotsTXT: true
 canonifyURLs: false
 
 params:
-   logo: "/images/Olivia.png"
- cover:
-   enable: true
- content:
-   enable: true
- search:
-   enable: true
-   type: basic
- description: "My personal blog about technology, life, and interesting thoughts"
- favicon: "/images/Olivia.png"
- emoji: "❤️"
- Article:
-   author: "Samuel Jnr"
-   share_buttons: true
-   categories: true
-   tags: true
-   math: true
-   toc: true
- sidebar:
-   subtitle: "Insights on Technology, Science, and More"
-   enabled: true
-   position: right
-   widgets:
-     - toc
-     - search
-     - recentPosts
-     - categories
-     - tags
- comments:
-   enabled: true
-   provider: giscus
-   giscus:
-     repo: "Sloane-J/SloaneBlog"
-     repoID: "R_kgDONXOl1A"
-     category: "General"
-     categoryID: "DIC_kwDONXOl1M4Ckxju"
-     mapping: "pathname"
-     reactionsEnabled: 1
-     emitMetadata: 0
-     lang: "en"
-     theme: "preferred_color_scheme"
- widgets:
-   homepage:
-     - type: search
-     - type: categories
-       params:
-         limit: 5
-     - type: tag-cloud
-   page:
-     - type: search
-     - type: categories
-       params:
-         limit: 5
-     - type: tag-cloud
+  logo: "/images/Olivia.png"
+  cover:
+    enable: true
+  content:
+    enable: true
+  search:
+    enable: true
+    type: basic
+  description: "My personal blog about technology, life, and interesting thoughts"
+  favicon: "/images/Olivia.png"
+  emoji: "❤️"
+  Article:
+    author: "Samuel Jnr"
+    share_buttons: true
+    categories: true
+    tags: true
+    math: true
+    toc: true
+  sidebar:
+    subtitle: "Insights on Technology, Science, and More"
+    enabled: true
+    position: right
+    widgets:
+      - toc
+      - search
+      - recentPosts
+      - categories
+      - tags
+  comments:
+    enabled: true
+    provider: giscus
+    giscus:
+      repo: "Sloane-J/SloaneBlog"
+      repoID: "R_kgDONXOl1A"
+      category: "General"
+      categoryID: "DIC_kwDONXOl1M4Ckxju"
+      mapping: "pathname"
+      reactionsEnabled: 1
+      emitMetadata: 0
+      lang: "en"
+      theme: "preferred_color_scheme"
+  schema:
+    name: "Sloane's Blog"
+    description: "Insights on Technology, Science, and More"
+    url: "https://syntaxplus-substance.netlify.app/"
+    logo: "https://syntaxplus-substance.netlify.app/images/Olivia.png"
+    author:
+      name: "Samuel D. Jnr"
+      jobTitle: "Tech Blogger"
+      description: "Writer and technology enthusiast sharing insights on science and technology"
 
- social:
-   - name: GitHub
-     url: "https://github.com/Sloane-J"
-   - name: Twitter
-     url: "https://twitter.com/sloane_jnr"
+widgets:
+  homepage:
+    - type: search
+    - type: categories
+      params:
+        limit: 5
+    - type: tag-cloud
+  page:
+    - type: search
+    - type: categories
+      params:
+        limit: 5
+    - type: tag-cloud
+
+social:
+  - name: GitHub
+    url: "https://github.com/Sloane-J"
+  - name: Twitter
+    url: "https://twitter.com/sloane_jnr"
 
 menu:
- main:
-   - identifier: home
-     name: Home
-     url: /
-     weight: 1
-     params:
-       icon: home
-   - identifier: posts
-     name: Posts
-     url: /posts
-     weight: 2
-     params:
-       icon: archives
-   - identifier: tutorials
-     name: Tutorials
-     url: /tutorials
-     weight: 3
-     params:
-       icon: school
-   - identifier: projects
-     name: Projects
-     url: /projects
-     weight: 4
-     params:
-       icon: code
-   - identifier: about
-     name: About
-     url: /about
-     weight: 5
-     params:
-       icon: user
-   - identifier: search
-     name: Search
-     url: /search
-     weight: 6
-     params:
-       icon: search
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+      params:
+        icon: home
+    - identifier: posts
+      name: Posts
+      url: /posts
+      weight: 2
+      params:
+        icon: archives
+    - identifier: tutorials
+      name: Tutorials
+      url: /tutorials
+      weight: 3
+      params:
+        icon: school
+    - identifier: projects
+      name: Projects
+      url: /projects
+      weight: 4
+      params:
+        icon: code
+    - identifier: about
+      name: About
+      url: /about
+      weight: 5
+      params:
+        icon: user
+    - identifier: search
+      name: Search
+      url: /search
+      weight: 6
+      params:
+        icon: search
 
 taxonomies:
- category: "categories"
- series: "series"
- tag: "tags"
- genre: genres
+  category: "categories"
+  series: "series"
+  tag: "tags"
+  genre: genres
 
 permalinks:
- post: "/:year/:month/:day/:slug/"
+  post: "/:year/:month/:day/:slug/"
 
 markup:
- goldmark:
-   renderer:
-     unsafe: true
+  goldmark:
+    renderer:
+      unsafe: false  # Optional: set to true if raw HTML is needed
 
 enableGitinfo: true
 
@@ -151,15 +161,5 @@ sitemap:
   filename: sitemap.xml
   priority: 0.5
 
-[params.schema]
-  name = "Sloane's Blog"
-  description = "Insights on Technology, Science, and More"
-  url = "https://syntaxplus-substance.netlify.app/"
-  logo = "https://syntaxplus-substance.netlify.app/images/Olivia.png"
-  [params.schema.author]
-    name = "Samuel D. Jnr"
-    jobTitle = "Tech Blogger"
-    description = "Writer and technology enthusiast sharing insights on science and technology"
-    
 minify: 
   enable: true
