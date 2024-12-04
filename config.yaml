@@ -149,3 +149,13 @@ sitemap:
   changefreq: weekly
   filename: sitemap.xml
   priority: 0.5
+
+[params.schema]
+  name = "Sloane's Blog"
+  description = "Insights on Technology, Science, and More"
+  url = "https://syntaxplus-substance.netlify.app/"
+  logo = "https://syntaxplus-substance.netlify.app/images/Olivia.png"
+  [params.schema.author]
+    name = "Samuel D. Jnr"
+    jobTitle = "Tech Blogger"
+    description = "Writer and technology enthusiast sharing insights on science and technology"
