@@ -163,3 +163,5 @@ sitemap:
 
 minify: 
   enable: true
+
+enableAMP: true

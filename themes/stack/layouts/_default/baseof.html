@@ -5,6 +5,11 @@
     <head>
         {{- partial "head/head.html" . -}}
         {{- block "head" . -}}{{ end }}
+
+        <!-- Add AMP link -->
+        {{ if .Params.amp }}
+        <link rel="amphtml" href="{{ .Permalink }}?amp">
+        {{ end }}
     </head>
     <body class="{{ block `body-class` . }}{{ end }}">
         {{- partial "head/colorScheme" . -}}

@@ -22,6 +22,7 @@ image_credit:
 seo:
   keywords: "screen time impact, digital anxiety, social media depression, mental health technology"
 weight: 1
+amp: true
 ---
 
 

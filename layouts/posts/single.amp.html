@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+
+    <!-- AMP Boilerplate CSS -->
+    <style amp-custom>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    </style>
+
+    <!-- AMP JS -->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+</head>
+<body>
+    <header>
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Date.Format "January 2, 2006" }}</p>
+    </header>
+
+    <article>
+        <div>{{ .Content | safeHTML }}</div>
+    </article>
+
+    <!-- AMP Image -->
+    {{ with .Params.image }}
+        <amp-img src="{{ . }}" width="600" height="400" layout="responsive" alt="Image for {{ .Title }}"></amp-img>
+    {{ end }}
+
+</body>
+</html>
