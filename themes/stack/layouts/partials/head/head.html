@@ -1,97 +1,96 @@
 <meta charset="utf-8" />
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{{- $description := partialCached "data/description" . .RelPermalink -}} <meta
-name='description' {{ printf "content=%q" $description | safeHTMLAttr }}> {{
-with .Params.Keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{
-end }} {{- $title := partial "data/title" . -}}
-<title>{{ $title }}</title>
+<!-- Basic Meta Tags -->
+<meta name="apple-mobile-web-title" content="Sloane's Blog">
+<meta name="application-name" content="Sloane's Blog">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Samuel D. Jnr">
+<meta name="copyright" content="Copyright © 2024 Sloane's Blog">
 
+<!-- Description and Keywords -->
+{{- $description := partialCached "data/description" . .RelPermalink -}}
+<meta name='description' {{ printf "content=%q" $description | safeHTMLAttr }}>
+{{ with .Params.Keywords }}
+<meta name="keywords" content="{{ delimit . ", " }}">
+{{end}}
+
+<!-- Title -->
+{{- $title := partial "data/title" . -}}
+<title>{{ $title }} | Insights on Technology, Science, and More</title>
+
+<!-- Canonical Link -->
 <link rel="canonical" href="{{ .Permalink }}" />
 
-{{- partial "head/style.html" . -}} {{- partial "head/script.html" . -}} {{-
-partial "head/opengraph/include.html" . -}} {{- range .AlternativeOutputFormats
--}}
-<link
-  rel="{{ .Rel }}"
-  type="{{ .MediaType.Type }}"
-  href="{{ .Permalink | safeURL }}"
-/>
-{{- end -}} {{ with .Site.Params.favicon }}
-<link rel="shortcut icon" href="{{ . | relURL }}" />
-{{ end }} {{- template "_internal/google_analytics.html" . -}} {{- partial
-"head/custom.html" . -}}
+<!-- Open Graph Meta Tags -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="Sloane's Blog">
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
 
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Favicon -->
+{{ with .Site.Params.favicon }}
+<link rel="icon" href="{{ . | relURL }}" type="image/png">
+{{ end }}
 
-{{- $description := partialCached "data/description" . .RelPermalink -}} <meta
-name='description' {{ printf "content=%q" $description | safeHTMLAttr }}> {{
-with .Params.Keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{
-end }} {{- $title := partial "data/title" . -}}
-<title>{{ $title }}</title>
+<!-- Schema Markup -->
 <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Blog",
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Sloane's Blog",
+  "description": "Insights on Technology, Science, and More",
+  "publisher": {
+    "@type": "Organization",
     "name": "Sloane's Blog",
-    "description": "Insights on Technology, Science, and More",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Sloane's Blog",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://syntaxplus-substance.netlify.app/logo.png"
-      }
-    },
-    "url": "https://syntaxplus-substance.netlify.app/",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://syntaxplus-substance.netlify.app/"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Samuel D. Jnr",
-      "jobTitle": "Tech Blogger",
-      "description": "Writer and technology enthusiast sharing insights on science and technology"
-    },
-    "about": {
-      "@type": "Thing",
-      "description": "A blog dedicated to exploring technology, science, and innovative insights"
-    },
-    "keywords": [
-      "technology",
-      "science",
-      "programming",
-      "tech insights",
-      "innovation"
-    ],
-    "inLanguage": "en-US",
-    "datePublished": "2024-01-01",
-    "dateModified": "2024-12-03"
-  }
-  </script>
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ .Site.Params.logo }}"
+    }
+  },
+  "url": "{{ .Site.BaseURL }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Samuel D. Jnr",
+    "jobTitle": "Tech Blogger",
+    "description": "Writer and technology enthusiast sharing insights on science and technology"
+  },
+  "keywords": [
+    "technology",
+    "science",
+    "programming",
+    "tech insights",
+    "innovation"
+  ],
+  "inLanguage": "en-US",
+  "datePublished": "{{ .PublishDate.Format "2006-01-02" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02" }}"
+}
+</script>
 
-<link rel="canonical" href="{{ .Permalink }}" />
+<!-- Additional Hugo Partials -->
+{{- partial "head/style.html" . -}}
+{{- partial "head/script.html" . -}}
+{{- partial "head/opengraph/include.html" . -}}
 
-{{- partial "head/style.html" . -}} {{- partial "head/script.html" . -}} {{-
-partial "head/opengraph/include.html" . -}} {{- range .AlternativeOutputFormats
--}}
+<!-- Alternative Output Formats -->
+{{- range .AlternativeOutputFormats -}}
 <link
   rel="{{ .Rel }}"
   type="{{ .MediaType.Type }}"
   href="{{ .Permalink | safeURL }}"
 />
-{{- end -}} {{ with .Site.Params.favicon }}
-<link rel="shortcut icon" href="{{ . | relURL }}" />
-{{ end }} {{- template "_internal/google_analytics.html" . -}} {{- partial
-"head/custom.html" . -}}
+{{- end -}}
 
 <!-- Google Analytics -->
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-RHS9VGQ9PY"
-></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RHS9VGQ9PY"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
@@ -100,3 +99,6 @@ partial "head/opengraph/include.html" . -}} {{- range .AlternativeOutputFormats
   gtag("js", new Date());
   gtag("config", "G-RHS9VGQ9PY");
 </script>
+
+<!-- Additional Custom Head Content -->
+{{- partial "head/custom.html" . -}}
