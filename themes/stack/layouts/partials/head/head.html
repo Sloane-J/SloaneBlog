@@ -30,9 +30,9 @@
 <!-- Canonical Link -->
 <link rel="canonical" href="{{ .Permalink }}" />
 
-<!-- AMP Link (Custom Implementation) -->
-{{ if .Params.amp }}
-<link rel="amphtml" href="{{ .Permalink }}?amp">
+<!-- AMP Link (Only for AMP Pages) -->
+{{ if .IsAMP }}
+    <link rel="amphtml" href="{{ .Permalink }}?amp">
 {{ end }}
 
 <!-- Open Graph Meta Tags -->
