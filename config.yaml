@@ -153,7 +153,9 @@ permalinks:
 markup:
   goldmark:
     renderer:
-      unsafe: false  # Optional: set to true if raw HTML is needed
+      unsafe: true  # Optional: set to true if raw HTML is needed
+
+ignoreErrors: = ['warning-goldmark-raw-html']
 
 enableGitinfo: true
 
