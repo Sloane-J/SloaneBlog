@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
   {{ range where .Site.Pages "Params.draft" "ne" true }}
   <url>
     <loc>{{ .Permalink }}</loc>
     <lastmod>{{ .Lastmod.Format "2006-01-02" }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>{{ if eq .Section "posts" }}0.8{{ else }}0.5{{ end }}</priority>
+
     {{ with .Params.image }}
     <image:image>
       <image:loc>{{ . }}</image:loc>
@@ -13,4 +16,5 @@
     {{ end }}
   </url>
   {{ end }}
+
 </urlset>
