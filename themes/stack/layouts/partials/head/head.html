@@ -30,11 +30,6 @@
 <!-- Canonical Link -->
 <link rel="canonical" href="{{ .Permalink }}" />
 
-<!-- AMP Link (Custom Implementation) -->
-{{ if .Params.amp }}
-<link rel="amphtml" href="{{ .Permalink }}?amp">
-{{ end }}
-
 <!-- Open Graph Meta Tags -->
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="{{ .Params.image }}">
