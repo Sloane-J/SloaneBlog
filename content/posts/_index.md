@@ -5,6 +5,7 @@ title: 'Most Recent Blog Posts'
 genres:
 - mystery
 - romance
+image: "/images/Olivia.png"
 cascade:  
     params:
         author: Sloane
@@ -12,6 +13,5 @@ cascade:
 tags:
 - red
 - blue
-weight: 3
-summary: read me latest posts
+summary: read the latest blog posts
 ---

@@ -25,7 +25,6 @@ seo:
     - Ghana
     - economic innovation
     - financial technology
-weight: 1
 ---
 
 

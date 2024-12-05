@@ -6,6 +6,7 @@ tags: ['tags:','first post','here']
 series: ["post"]
 section: "posts"  # or "tutorials" or "projects"
 featured: true
+image: "/images/Olivia.png"
 summary: "This is the first post"
 ---
 

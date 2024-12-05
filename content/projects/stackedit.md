@@ -4,7 +4,6 @@ draft: false
 title: "Stack Edit"
 tags: ['first post', 'here']
 series: ["post"]
-weight: 2
 summary: "This is a short description of the post."
 featured: true
 image: "/images/Olivia.png"

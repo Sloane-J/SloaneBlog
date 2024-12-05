@@ -21,8 +21,6 @@ image_credit:
   url: "https://pixabay.com"
 seo:
   keywords: "screen time impact, digital anxiety, social media depression, mental health technology"
-weight: 1
-amp: true
 ---
 
 

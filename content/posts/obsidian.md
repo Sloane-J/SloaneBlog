@@ -4,7 +4,6 @@ draft: false
 title: 'Obsidian'
 tags: ['tags:','first post','here']
 series: ["post"]
-weight: 2
 summary: this is a line break 
 sidebar: true
 lastmod: 2024-12-01

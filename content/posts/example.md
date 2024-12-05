@@ -11,7 +11,6 @@ cascade:
 tags:
 - red
 - blue
-weight: 3
 section: "posts"  # or "tutorials" or "projects"
 author: Sloane
 summary: ...and after a heading...
