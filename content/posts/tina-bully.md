@@ -20,7 +20,7 @@ tags:
   - social media
   - mental health
 featured: true
-image: "/images/tina 3.webp"
+image: "/images/tina-3.webp"
 image_credit: 
   source: "New York Post"
 seo:
@@ -31,7 +31,7 @@ seo:
 
 A deeply troubling incident in South Carolina has drawn attention to the devastating effects of bullying. A 12-year-old girl, driven to attempt suicide after enduring relentless harassment at her middle school, was mocked in a horrifying way even after her tragic act. According to a new lawsuit, the bullies snuck into the hospital’s intensive care unit where the victim was being treated, took photos of her, and shared them on social media to ridicule her.
 
-{{< figure src="/images/tina 2.webp" alt="12-year-old girl who became a victim of severe bullying, driving her to attempt suicide," class="img-class" caption="Kelaia Turner who became a victim of severe bullying, driving her to attempt suicide" >}}
+{{< figure src="/images/tina-2.webp" alt="12-year-old girl who became a victim of severe bullying, driving her to attempt suicide," class="img-class" caption="Kelaia Turner who became a victim of severe bullying, driving her to attempt suicide" >}}
 
 The victim, Kelaia Turner, now 14, suffered over a year of physical and verbal abuse by five classmates at Dr. Phinnize J. Fisher Middle School in Greenville, her family claims. The lawsuit accuses the school district and nine staff members of negligence, alleging their failure to intervene allowed the bullying to escalate.
 
