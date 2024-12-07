@@ -1,0 +1,29 @@
+{{ if .Site.Params.search.enable }}
+<div class="search-container">
+  <input type="text" id="search-input" placeholder="Search...">
+  <div id="search-results"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    const articles = document.querySelectorAll('.article-list article');
+    
+    articles.forEach(article => {
+      const title = article.querySelector('h2').textContent.toLowerCase();
+      const content = article.textContent.toLowerCase();
+      
+      if (title.includes(query) || content.includes(query)) {
+        article.style.display = 'block';
+      } else {
+        article.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+{{ end }}

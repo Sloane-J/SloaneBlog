@@ -184,7 +184,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- Posts Section -->
                 <div>
-                    <h3 class="text-2xl font-bold mb-8 text-gray-100">Articles</h3>
+                    <h3 class="text-2xl font-bold mb-8 text-gray-100">News</h3>
                     <div class="space-y-6">
                         {{ range first 3 (where .Site.Pages "Section" "posts") }}
                         <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 bg-gray-700 p-4 rounded-lg shadow-lg hover:scale-105 transition">
@@ -208,7 +208,7 @@
 
                 <!-- Tutorials Section -->
                 <div>
-                    <h3 class="text-2xl font-bold mb-8 text-gray-100">Tutorials</h3>
+                    <h3 class="text-2xl font-bold mb-8 text-gray-100">How To</h3>
                     <div class="space-y-6">
                         {{ range first 3 (where .Site.Pages "Section" "tutorials") }}
                         <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 bg-gray-700 p-4 rounded-lg shadow-lg hover:scale-105 transition">
