@@ -58,6 +58,6 @@ Mahama's lead in the polls, now bolstered by Bloomberg's prediction, suggests th
 
 For Ghana, this election is about more than just politics. It's about finding a path forward in a challenging economic environment, restoring hope, and charting a course toward economic recovery and stability.
 
-{{< figure src="/images/ndc rally.webp" alt="The Path Forward: Mahama's Campaign Promises Economic Renewal" class="img-class" caption="Economic street scene in Accra, showing market activity and economic strain"  >}}
+{{< figure src="/images/john-mahama-at-rally.webp" alt="John Mahama addressing a campaign rally" class="img-class" caption="John Mahama addressing a campaign rally"  >}}
 
 As the nation approaches the ballot box, all eyes are on how the electorate will express its frustration and aspirations. With Bloomberg's influential prediction adding weight to the narrative, the outcome could decisively reshape Ghana's political and economic trajectory in the years to come.
