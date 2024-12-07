@@ -1,6 +1,6 @@
 baseURL: "https://syntaxplus-substance.netlify.app/"
 theme: "stack"
-languageCode: "en-GB"  # Changed from "en-uk" to "en-GB"
+languageCode: "en-GB"
 title: "Sloane's Blog"
 
 outputs:
@@ -20,6 +20,8 @@ mainSections:
   - posts
   - tutorials
   - projects
+  - technology
+  - deals
 
 imaging:
   resampleFilter: lanczos
@@ -30,7 +32,6 @@ enableRobotsTXT: true
 canonifyURLs: false
 
 params:
-  amp: true
   logo: "/images/Olivia.png"
   cover:
     enable: true
@@ -42,6 +43,26 @@ params:
   description: "My personal blog about technology, life, and interesting thoughts"
   favicon: "/images/Olivia.png"
   emoji: "❤️"
+
+  widgets:
+    homepage:
+      - type: search
+      - type: categories
+        params:
+          limit: 5
+      - type: tag-cloud
+    page:
+      - type: search
+      - type: categories
+        params:
+          limit: 5
+      - type: tag-cloud
+
+  sidebar:
+    subtitle: "Insights on Technology, Science, and More"
+    enabled: true
+    position: right
+
   Article:
     author: "Samuel Jnr"
     share_buttons: true
@@ -49,16 +70,7 @@ params:
     tags: true
     math: true
     toc: true
-  sidebar:
-    subtitle: "Insights on Technology, Science, and More"
-    enabled: true
-    position: right
-    widgets:
-      - toc
-      - search
-      - recentPosts
-      - categories
-      - tags
+
   comments:
     enabled: true
     provider: giscus
@@ -72,6 +84,7 @@ params:
       emitMetadata: 0
       lang: "en"
       theme: "preferred_color_scheme"
+
   schema:
     name: "Sloane's Blog"
     description: "Insights on Technology, Science, and More"
@@ -81,20 +94,6 @@ params:
       name: "Samuel D. Jnr"
       jobTitle: "Tech Blogger"
       description: "Writer and technology enthusiast sharing insights on science and technology"
-
-widgets:
-  homepage:
-    - type: search
-    - type: categories
-      params:
-        limit: 5
-    - type: tag-cloud
-  page:
-    - type: search
-    - type: categories
-      params:
-        limit: 5
-    - type: tag-cloud
 
 social:
   - name: GitHub
@@ -111,11 +110,11 @@ menu:
       params:
         icon: home
     - identifier: posts
-      name: Posts
+      name: News
       url: /posts
       weight: 2
       params:
-        icon: archives
+        icon: news
     - identifier: tutorials
       name: Tutorials
       url: /tutorials
@@ -128,24 +127,30 @@ menu:
       weight: 4
       params:
         icon: code
+    - identifier: technology
+      name: Technology
+      url: /technology
+      weight: 5
+      params:
+        icon: augmented-reality
+    - identifier: deals
+      name: Deals
+      url: /deals
+      weight: 6
+      params:
+        icon: shopping-cart
     - identifier: about
       name: About
       url: /about
-      weight: 5
+      weight: 7
       params:
         icon: user
-    - identifier: search
-      name: Search
-      url: /search
-      weight: 6
-      params:
-        icon: search
 
 taxonomies:
   category: "categories"
   series: "series"
   tag: "tags"
-  genre: genres
+  genre: "genres"
 
 permalinks:
   post: "/:year/:month/:day/:slug/"
@@ -153,9 +158,7 @@ permalinks:
 markup:
   goldmark:
     renderer:
-      unsafe: true  # Optional: set to true if raw HTML is needed
-
-ignoreErrors: = ['warning-goldmark-raw-html']
+      unsafe: true
 
 enableGitinfo: true
 
