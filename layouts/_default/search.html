@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="search-page">
+  <h1>{{ .Title }}</h1>
+  
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search...">
+    <div id="search-results"></div>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('/index.json')
+      .then(response => response.json())
+      .then(pages => {
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+        
+        searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase();
+          const results = pages.filter(page => 
+            page.title.toLowerCase().includes(query) || 
+            page.content.toLowerCase().includes(query)
+          );
+          
+          searchResults.innerHTML = results.map(page => `
+            <div class="search-result">
+              <a href="${page.url}">${page.title}</a>
+              <p>${page.content.substring(0, 150)}...</p>
+            </div>
+          `).join('');
+        });
+      });
+  });
+  </script>
+</div>
+{{ end }}

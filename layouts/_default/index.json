@@ -1,0 +1,11 @@
+[
+  {{ range $index, $page := .Site.Pages }}
+    {{ if or (eq $page.Kind "page") (eq $page.Kind "post") }}
+      {{ if $index }},{{ end }}{
+        "title": {{ $page.Title | jsonify }},
+        "content": {{ $page.Plain | jsonify }},
+        "url": {{ $page.Permalink | jsonify }}
+      }
+    {{ end }}
+  {{ end }}
+]

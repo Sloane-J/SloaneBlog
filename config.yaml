@@ -22,6 +22,7 @@ mainSections:
   - projects
   - technology
   - deals
+  - search
 
 imaging:
   resampleFilter: lanczos
@@ -32,6 +33,8 @@ enableRobotsTXT: true
 canonifyURLs: false
 
 params:
+  pagination:
+    pagerSize: 5
   logo: "/images/Olivia.png"
   cover:
     enable: true
@@ -145,6 +148,12 @@ menu:
       weight: 7
       params:
         icon: user
+    - identifier: search
+      name: Search
+      url: /search
+      weight: 8
+      params:
+        icon: search
 
 taxonomies:
   category: "categories"
@@ -169,3 +178,4 @@ sitemap:
 
 minify: 
   enable: true
+
