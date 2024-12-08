@@ -1,38 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const searchForm = document.querySelector(".search-form");
-  const searchInput = searchForm.querySelector('input[name="keyword"]');
-  const searchResults = document.querySelector(".search-results");
+  const searchInput = document.getElementById("search-input");
+  const searchResults = document.getElementById("search-results");
 
-  searchForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
-    const keyword = searchInput.value.toLowerCase();
+  fetch("/index.json")
+    .then((response) => response.json())
+    .then((pages) => {
+      searchInput.addEventListener("input", function () {
+        const query = this.value.toLowerCase();
+        const results = pages.filter(
+          (page) =>
+            page.title.toLowerCase().includes(query) ||
+            page.content.toLowerCase().includes(query)
+        );
 
-    try {
-      const response = await fetch("/index.json");
-      const pages = await response.json();
+        displayResults(results);
+      });
 
-      const results = pages.filter(
-        (page) =>
-          page.title.toLowerCase().includes(keyword) ||
-          page.content.toLowerCase().includes(keyword)
-      );
-
-      displayResults(results);
-    } catch (error) {
-      console.error("Search error:", error);
-    }
-  });
-
-  function displayResults(results) {
-    searchResults.innerHTML = results
-      .map(
-        (result) => `
-            <div class="search-result">
-                <h3><a href="${result.url}">${result.title}</a></h3>
-                <p>${result.summary || ""}</p>
-            </div>
+      function displayResults(results) {
+        searchResults.innerHTML = results
+          .map(
+            (page) => `
+          <div class="search-result">
+            <a href="${page.url}">${page.title}</a>
+            <p>${page.content.substring(0, 150)}...</p>
+          </div>
         `
-      )
-      .join("");
-  }
+          )
+          .join("");
+      }
+    });
 });

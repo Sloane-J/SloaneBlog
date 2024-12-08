@@ -1,7 +1,0 @@
-{{- $.Scratch.Add "index" slice -}}
-{{- range .Site.Pages -}}
-    {{- if or (and (not .Draft) (not .Params.private)) (eq .Section "posts") -}}
-        {{- $.Scratch.Add "index" (dict "title" .Title "content" .Plain "url" .Permalink "summary" .Summary) -}}
-    {{- end -}}
-{{- end -}}
-{{- dict "index" ($.Scratch.Get "index") | jsonify -}}

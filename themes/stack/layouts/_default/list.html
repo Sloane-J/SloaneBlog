@@ -68,14 +68,34 @@
     {{- end -}}
     
     {{/* List only pages that are not a subsection */}}
-    {{ $paginator := .Paginate $pages }}
+    {{ $paginator := .Paginate $pages (.Site.Params.pagination.pagerSize | default 10) }}
     <section class="article-list--compact">
         {{ range $paginator.Pages }}
             {{ partial "article-list/compact" . }}
         {{ end }}
     </section>
 
-    {{- partial "pagination.html" . -}}
+    {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+    <nav class="pagination">
+        {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}" class="page-link">
+            Previous
+        </a>
+        {{ end }}
+        {{ range .Paginator.Pagers }}
+            {{ if eq .PageNumber $.Paginator.PageNumber }}
+                <span class="page-link active">{{ .PageNumber }}</span>
+            {{ else }}
+                <a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a>
+            {{ end }}
+        {{ end }}
+        {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}" class="page-link">
+            Next
+        </a>
+        {{ end }}
+    </nav>
+    {{ end }}
 
     {{ partialCached "footer/footer" . }}
 {{ end }}

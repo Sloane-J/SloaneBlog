@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>404 - Page Not Found</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-404 {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .nav-link {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .nav-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto px-4 py-16 max-w-4xl">
+        <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto w-80 h-60 floating-404" viewBox="0 0 500 300">
+                <defs>
+                    <linearGradient id="errorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <text x="50%" y="50%" text-anchor="middle" font-size="120" fill="url(#errorGradient)">404</text>
+                <text x="50%" y="60%" text-anchor="middle" font-size="24" fill="#4a5568">Page Not Found</text>
+            </svg>
+
+            <h1 class="text-3xl font-bold text-gray-800 mb-6">Oops! This page seems to have wandered off.</h1>
+            <p class="text-gray-600 mb-8">Don't worry, we'll help you find your way back.</p>
+
+            <div class="grid md:grid-cols-3 gap-4 mb-12">
+                <a href="/" class="nav-link bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:bg-indigo-50">
+                    <span class="text-3xl mb-2">🏠</span>
+                    <span class="font-semibold text-gray-700">Home</span>
+                </a>
+                <a href="/posts" class="nav-link bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:bg-indigo-50">
+                    <span class="text-3xl mb-2">📝</span>
+                    <span class="font-semibold text-gray-700">News</span>
+                </a>
+                <a href="/tutorials" class="nav-link bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:bg-indigo-50">
+                    <span class="text-3xl mb-2">🎓</span>
+                    <span class="font-semibold text-gray-700">Tutorials</span>
+                </a>
+                <a href="/projects" class="nav-link bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:bg-indigo-50">
+                    <span class="text-3xl mb-2">💻</span>
+                    <span class="font-semibold text-gray-700">Projects</span>
+                </a>
+                <a href="/about" class="nav-link bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:bg-indigo-50">
+                    <span class="text-3xl mb-2">👤</span>
+                    <span class="font-semibold text-gray-700">About Me</span>
+                </a>
+                <a href="/search" class="nav-link bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:bg-indigo-50">
+                    <span class="text-3xl mb-2">🔍</span>
+                    <span class="font-semibold text-gray-700">Search</span>
+                </a>
+            </div>
+
+            <form action="/search" method="get" class="max-w-lg mx-auto">
+                <div class="flex">
+                    <input 
+                        type="text" 
+                        name="q" 
+                        placeholder="Search the blog..." 
+                        class="flex-grow px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    >
+                    <button 
+                        type="submit" 
+                        class="bg-indigo-600 text-white px-6 py-2 rounded-r-lg hover:bg-indigo-700 transition duration-300"
+                    >
+                        Search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
