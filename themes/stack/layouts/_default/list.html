@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <header>
+    <header class="section-header">
         <h3 class="section-title">
             {{ if eq .Parent (.GetPage "/") }}
                 {{ T "list.section" }}
@@ -35,9 +35,10 @@
                         <img src="{{ $Permalink }}" 
                             width="{{ $Width }}"
                             height="{{ $Height }}" 
-                            loading="lazy">
+                            loading="lazy"
+                            class="responsive-image">
                     {{ else }}
-                        <img src="{{ $image.permalink }}" loading="lazy" />
+                        <img src="{{ $image.permalink }}" loading="lazy" class="responsive-image" />
                     {{ end }}
                 </div>
             {{ end }}
@@ -48,14 +49,12 @@
     {{- $pages := .Pages | complement $subsections -}}
     
     {{- if eq (len $pages) 0 -}}
-        {{/* If there are no normal pages, display subsections in list style, with pagination */}}
-        {{/* This happens with taxonomies like categories or tags */}}
         {{- $pages = $subsections -}}
         {{- $subsections = slice -}}
     {{- end -}}
 
     {{- with $subsections -}}
-        <aside>
+        <aside class="subsection-aside">
             <h2 class="section-title">{{ T "list.subsection" (len $subsections) }}</h2>
             <div class="subsection-list">
                 <div class="article-list--tile">
@@ -67,32 +66,40 @@
         </aside>
     {{- end -}}
     
-    {{/* List only pages that are not a subsection */}}
     {{ $paginator := .Paginate $pages (.Site.Params.pagination.pagerSize | default 10) }}
-    <section class="article-list--compact">
+    <section class="article-grid">
         {{ range $paginator.Pages }}
-            <div class="post-card" style="margin-bottom: 20px; border-radius: 8px; overflow: hidden;">
+            <div class="post-card">
                 {{ with .Params.image }}
-                <div class="post-image" style="background: url({{ . }}) no-repeat center center; background-size: cover; height: 200px;">
+                <div class="post-image" style="background: url({{ . }}) no-repeat center center; background-size: cover;">
                 </div>
                 {{ end }}
-                <div style="padding: 20px;">
+                <div class="post-content">
                     {{ if .Params.categories }}
-                    <div class="post-category" style="color: #fff; padding-top: 10px;">
-                        {{ range .Params.categories }}<span style="background: rgb(255, 108, 108); padding: 5px 10px; border-radius: 3px; margin-right: 10px; display: inline-block;">{{ . }}</span>{{ end }}
+                    <div class="post-category">
+                        {{ range first 3 .Params.categories }}
+                            <span class="category-tag">{{ . }}</span>
+                        {{ end }}
                     </div>
                     {{ end }}
-                    <h2 class="post-title" style="color: #fff; padding-top: 10px;"><a href="{{ .Permalink }}" style="color: inherit; text-decoration: none;">{{ .Title }}</a></h2>
+                    <h2 class="post-title">
+                        <a href="{{ .Permalink }}">
+                            {{ .Title }}
+                        </a>
+                    </h2>
                     {{ with .Params.subtitle }}
-                    <p class="post-subtitle" style="color: #ccc; padding-top: 5px;">{{ . }}</p>
+                    <p class="post-subtitle">{{ . }}</p>
                     {{ end }}
-                    <div class="post-meta" style="color: #888; padding-top: 10px;">
+                    <div class="post-meta">
                         <span class="post-date">{{ .Date.Format "Jan 02, 2006" }}</span>
                         <span class="post-reading-time">{{ .ReadingTime }} min read</span>
                     </div>
                     {{ with .Summary }}
-                    <p class="post-summary" style="color: #888; padding-top: 10px;">{{ . }}</p>
+                    <p class="post-summary">{{ . }}</p>
                     {{ end }}
+                    <a href="{{ .Permalink }}" class="read-more-link">
+                        Read More
+                    </a>
                 </div>
             </div>
         {{ end }}
@@ -101,26 +108,204 @@
     {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
     <nav class="pagination">
         {{ if .Paginator.HasPrev }}
-        <a href="{{ .Paginator.Prev.URL }}" class="page-link">
-            Previous
+        <a href="{{ .Paginator.Prev.URL }}" class="pagination-link prev">
+            <span class="pagination-icon">←</span> Previous
         </a>
         {{ end }}
-        {{ range .Paginator.Pagers }}
-            {{ if eq .PageNumber $.Paginator.PageNumber }}
-                <span class="page-link active">{{ .PageNumber }}</span>
-            {{ else }}
-                <a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a>
-            {{ end }}
-        {{ end }}
+
+        <div class="pagination-info">
+            <span>Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</span>
+        </div>
+
         {{ if .Paginator.HasNext }}
-        <a href="{{ .Paginator.Next.URL }}" class="page-link">
-            Next
+        <a href="{{ .Paginator.Next.URL }}" class="pagination-link next">
+            Next <span class="pagination-icon">→</span>
         </a>
         {{ end }}
     </nav>
     {{ end }}
 
     {{ partialCached "footer/footer" . }}
+
+    <style>
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .section-header {
+                padding: 10px;
+            }
+
+            .section-card {
+                flex-direction: column;
+            }
+
+            .section-details {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .section-image {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .responsive-image {
+                width: 100%;
+                height: auto;
+                max-width: 300px;
+            }
+
+            .article-grid {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+                padding: 10px !important;
+            }
+
+            .post-card {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .post-image {
+                height: 200px;
+            }
+
+            .post-content {
+                padding: 15px;
+            }
+
+            .post-category {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+
+            .category-tag {
+                margin: 2px;
+                font-size: 0.7em;
+            }
+
+            .pagination {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pagination-link {
+                margin: 10px 0;
+            }
+        }
+
+        /* Base Styles */
+        .article-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 20px; 
+            padding: 20px;
+        }
+
+        .post-card {
+            background-color: #1e1e1e; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-image {
+            height: 200px;
+            width: 100%;
+            background-size: cover !important;
+        }
+
+        .post-content {
+            padding: 20px; 
+            flex-grow: 1; 
+            display: flex; 
+            flex-direction: column;
+            background-color: #424242;
+        }
+
+        .category-tag {
+            background: rgb(255, 108, 108); 
+            color: white;
+            padding: 5px 10px; 
+            border-radius: 3px; 
+            margin-right: 10px; 
+            display: inline-block;
+            font-size: 0.8em;
+        }
+
+        .post-title a {
+            color: #fff; 
+            text-decoration: none;
+            font-size: 1.25em;
+        }
+
+        .post-subtitle {
+            color: #ccc; 
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+
+        .post-meta {
+            color: #888; 
+            margin-bottom: 10px;
+            font-size: 0.8em;
+        }
+
+        .post-meta .post-reading-time {
+            margin-left: 10px;
+        }
+
+        .post-summary {
+            color: #888; 
+            flex-grow: 1;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .read-more-link {
+            background-color: rgb(255, 108, 108);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            align-self: flex-start;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination {
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+        }
+
+        .pagination-link {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 15px;
+            background-color: #3a3a3a;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .pagination-info {
+            display: flex;
+            align-items: center;
+            color: #ccc;
+            font-size: 1em;
+        }
+    </style>
 {{ end }}
 
 {{ define "right-sidebar" }}
