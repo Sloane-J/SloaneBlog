@@ -1,7 +1,7 @@
 ---
 title: "Tragic Case of Bullying: Bullies Mock 12-Year-Old in ICU After Driving Her to Attempt Suicide
 "
-summary: "A South Carolina middle school faces a lawsuit after relentless bullying drove 12-year-old Kelaia Turner to attempt suicide. Even after the tragic event, her bullies mocked her by taking photos in the ICU and sharing them online. The case highlights the urgent need for better anti-bullying efforts and mental health support in schools."
+summary: "A South Carolina middle school faces a lawsuit after relentless bullying drove 12-year-old Kelaia Turner to attempt suicide."
 
 date: 2024-12-05
 author: ["Sloane"]

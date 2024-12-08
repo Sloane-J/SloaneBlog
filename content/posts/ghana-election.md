@@ -1,6 +1,6 @@
 ---
 title: "Ghana's Political Crossroads: Bloomberg Tips Ex-President in High-Stakes Election"
-summary: "Bloomberg has tipped former President John Mahama to win Ghana's upcoming election, highlighting the ruling party's vulnerability amid a severe debt crisis. With economic challenges mounting and citizens facing high living costs, the election emerges as a critical turning point for the nation's political and economic future. With mounting economic pressures and a debt crisis weighing heavily on citizens, Ghana's ruling party faces a critical election. Former President John Mahama leads in polls, capitalizing on widespread frustration over high living costs and interest rates. The upcoming vote could mark a significant political turning point for the nation, reflecting deep-seated economic challenges and the electorate's demand for change.."
+summary: "Bloomberg has tipped former President John Mahama to win Ghana's upcoming election, highlighting the ruling party's vulnerability amid a severe debt crisis."
 date: 2024-12-07
 author: ["Sloane"]
 draft: false

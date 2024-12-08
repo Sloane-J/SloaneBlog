@@ -6,6 +6,7 @@ tags: ['tags:','markdown basic','markdown', 'Basics']
 series: ["post"]
 section: "posts"  # or "tutorials" or "projects"
 author: Sloane
+summary: "The basics of markdown"
 ---
 
 ## This is me try ing out whatever work
