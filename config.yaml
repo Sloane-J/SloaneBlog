@@ -1,7 +1,7 @@
 baseURL: "https://syntaxplus-substance.netlify.app/"
 theme: "stack"
 languageCode: "en-GB"
-title: "Sloane's Blog"
+title: "InTheLoop"
 
 outputs:
   home:
