@@ -180,7 +180,7 @@
     {{ end }}
     {{ end }}
 
-    
+
 <section class="bg-gradient-to-br from-gray-800 to-gray-900 py-16">
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12">
@@ -189,9 +189,9 @@
         <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-100">News</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
           {{ range first 4 (where .Site.Pages "Section" "posts") }}
-          <div class="flex flex-col bg-gray-700 p-3 md:p-4 rounded-lg shadow-lg hover:scale-105 transition">
-            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-md object-cover mb-2">
-            <div>
+          <div class="bg-gray-700 rounded-lg shadow-lg hover:scale-105 transition">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
+            <div class="p-3 md:p-4">
               <h4 class="text-base md:text-lg font-semibold mb-2">
                 <a href="{{ .Permalink }}" class="text-gray-100 hover:text-blue-300">{{ .Title }}</a>
               </h4>
@@ -213,9 +213,9 @@
         <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-100">How To</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
           {{ range first 4 (where .Site.Pages "Section" "tutorials") }}
-          <div class="flex flex-col bg-gray-700 p-3 md:p-4 rounded-lg shadow-lg hover:scale-105 transition">
-            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-md object-cover mb-2">
-            <div>
+          <div class="bg-gray-700 rounded-lg shadow-lg hover:scale-105 transition">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
+            <div class="p-3 md:p-4">
               <h4 class="text-base md:text-lg font-semibold mb-2">
                 <a href="{{ .Permalink }}" class="text-gray-100 hover:text-blue-300">{{ .Title }}</a>
               </h4>
@@ -237,9 +237,9 @@
         <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-100">Deals</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
           {{ range first 4 (where .Site.Pages "Section" "deals") }}
-          <div class="flex flex-col bg-gray-700 p-3 md:p-4 rounded-lg shadow-lg hover:scale-105 transition">
-            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-md object-cover mb-2">
-            <div>
+          <div class="bg-gray-700 rounded-lg shadow-lg hover:scale-105 transition">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
+            <div class="p-3 md:p-4">
               <h4 class="text-base md:text-lg font-semibold mb-2">
                 <a href="{{ .Permalink }}" class="text-gray-100 hover:text-yellow-300">{{ .Title }}</a>
               </h4>
@@ -261,9 +261,9 @@
         <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-100">Technology</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
           {{ range first 4 (where .Site.Pages "Section" "technology") }}
-          <div class="flex flex-col bg-gray-700 p-3 md:p-4 rounded-lg shadow-lg hover:scale-105 transition">
-            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-md object-cover mb-2">
-            <div>
+          <div class="bg-gray-700 rounded-lg shadow-lg hover:scale-105 transition">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
+            <div class="p-3 md:p-4">
               <h4 class="text-base md:text-lg font-semibold mb-2">
                 <a href="{{ .Permalink }}" class="text-gray-100 hover:text-green-300">{{ .Title }}</a>
               </h4>
@@ -285,9 +285,9 @@
         <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-100">Trailers</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
           {{ range first 4 (where .Site.Pages "Section" "trailers") }}
-          <div class="flex flex-col bg-gray-700 p-3 md:p-4 rounded-lg shadow-lg hover:scale-105 transition">
-            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-md object-cover mb-2">
-            <div>
+          <div class="bg-gray-700 rounded-lg shadow-lg hover:scale-105 transition">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
+            <div class="p-3 md:p-4">
               <h4 class="text-base md:text-lg font-semibold mb-2">
                 <a href="{{ .Permalink }}" class="text-gray-100 hover:text-red-300">{{ .Title }}</a>
               </h4>
