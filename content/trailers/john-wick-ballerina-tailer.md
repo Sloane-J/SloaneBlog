@@ -10,6 +10,7 @@ video: "https://youtube.com/embed/2Cp5kSNWYSE?si=fSlpAMyu5Gxzk7MM"
 trailer_type: "movie"
 featured: true
 image: "/images/ana-de-armas.webp"
+draft: false
 ---
 
 ## Trailer Details
