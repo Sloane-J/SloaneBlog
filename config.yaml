@@ -36,7 +36,7 @@ canonifyURLs: false
 params:
   pagination:
     pagerSize: 6
-  logo: "/images/Olivia.png"
+  logo: "/images/avatar.webp"
   cover:
     enable: true
   content:
@@ -45,7 +45,7 @@ params:
     enable: true
     type: basic
   description: "My personal blog about technology, life, and interesting thoughts"
-  favicon: "/images/Olivia.png"
+  favicon: "/images/avatar.webp"
   emoji: "❤️"
 
   widgets:
@@ -93,7 +93,7 @@ params:
     name: "Sloane's Blog"
     description: "Insights on Technology, Science, and More"
     url: "https://intheloop-blog.netlify.app/"
-    logo: "https://intheloop-blog.netlify.app/images/Olivia.png"
+    logo: "https://intheloop-blog.netlify.app/images/avatar.webp"
     author:
       name: "Samuel D. Jnr"
       jobTitle: "Tech Blogger"

@@ -8,8 +8,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon: "/images/avatar.webp"
-    emoji: "🔥"
+    favicon:
 
     footer:
         since:
