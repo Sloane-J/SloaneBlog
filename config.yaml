@@ -148,6 +148,12 @@ menu:
       weight: 7
       params:
         icon: user
+          - identifier: about
+      name: Trailers
+      url: /trailers
+      weight: 8
+      params:
+        icon: movie
     - identifier: search
       name: Search
       url: /search
