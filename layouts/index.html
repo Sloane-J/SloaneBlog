@@ -188,7 +188,7 @@
       <div class="md:col-span-1 lg:col-span-2">
         <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-100">News</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-          {{ range first 4 (where .Site.Pages "Section" "posts") }}
+          {{ range first 2 (where .Site.Pages "Section" "posts") }}
           <div class="bg-gray-700 rounded-lg shadow-lg hover:scale-105 transition">
             <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
             <div class="p-3 md:p-4">
@@ -212,7 +212,7 @@
       <div class="md:col-span-1 lg:col-span-2">
         <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-100">How To</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-          {{ range first 4 (where .Site.Pages "Section" "tutorials") }}
+          {{ range first 2 (where .Site.Pages "Section" "tutorials") }}
           <div class="bg-gray-700 rounded-lg shadow-lg hover:scale-105 transition">
             <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
             <div class="p-3 md:p-4">
@@ -236,7 +236,7 @@
       <div class="md:col-span-1 lg:col-span-1">
         <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-100">Deals</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-          {{ range first 4 (where .Site.Pages "Section" "deals") }}
+          {{ range first 5 (where .Site.Pages "Section" "deals") }}
           <div class="bg-gray-700 rounded-lg shadow-lg hover:scale-105 transition">
             <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
             <div class="p-3 md:p-4">
@@ -260,7 +260,7 @@
       <div class="md:col-span-1 lg:col-span-1">
         <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-100">Technology</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-          {{ range first 4 (where .Site.Pages "Section" "technology") }}
+          {{ range first 2 (where .Site.Pages "Section" "technology") }}
           <div class="bg-gray-700 rounded-lg shadow-lg hover:scale-105 transition">
             <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
             <div class="p-3 md:p-4">
@@ -284,7 +284,7 @@
       <div class="md:col-span-2 lg:col-span-2">
         <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-100">Trailers</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-          {{ range first 4 (where .Site.Pages "Section" "trailers") }}
+          {{ range first 2 (where .Site.Pages "Section" "trailers") }}
           <div class="bg-gray-700 rounded-lg shadow-lg hover:scale-105 transition">
             <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
             <div class="p-3 md:p-4">
