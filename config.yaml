@@ -149,7 +149,7 @@ menu:
       weight: 7
       params:
         icon: user
-    - identifier: about
+    - identifier: trailers
       name: Trailers
       url: /trailers
       weight: 8
