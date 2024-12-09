@@ -2,6 +2,7 @@
 date: 2024-11-28T12:49:15Z
 draft: false
 title: 'About me'
+summary: "about me"
 ---
 
 ### About Me
