@@ -12,8 +12,14 @@
   <div class="container mx-auto py-8">
     <div class="mb-4 flex flex-wrap justify-center">
       <button class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded mr-2 mb-2" data-category="all">All</button>
-      {{ range uniq (apply .Site.Pages "Param" "category") }}
-      <button class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded mr-2 mb-2" data-category="{{ . }}">{{ . }}</button>
+      {{ $categories := slice }}
+      {{ range .Site.Pages }}
+        {{ if .Params.category }}
+          {{ $categories = $categories | append .Params.category }}
+        {{ end }}
+      {{ end }}
+      {{ range uniq $categories }}
+        <button class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded mr-2 mb-2" data-category="{{ . }}">{{ . }}</button>
       {{ end }}
       <div class="ml-auto">
         <select class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded" id="sort-select">
