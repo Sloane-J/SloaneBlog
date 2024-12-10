@@ -23,7 +23,6 @@ seller:
       <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">TechNova Electronics</div>
       <h1 class="block mt-1 text-lg leading-tight font-medium text-black">Wireless Noise-Canceling Headphones</h1>
       <p class="mt-2 text-gray-500">Premium over-ear wireless headphones with advanced noise-canceling technology and exceptional sound quality</p>
-      
       <div class="mt-4">
         <span class="text-2xl font-bold text-gray-900">$249.99</span>
       </div>
