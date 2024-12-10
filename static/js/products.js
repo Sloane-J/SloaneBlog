@@ -20,5 +20,17 @@ const products = [
       image: "/images/product3.jpg",
       category: "Category A"
     },
+    {
+      id: "fresh-eggs",
+      name: "Fresh Farm Eggs",
+      category: ["Groceries"],
+      price: 3.99,
+      description: "Organic, fresh farm eggs available in packs of 12.",
+      image: "/images/deals/fresh-eggs.jpg",
+      seller: {
+          name: "Green Valley Farms",
+          contact: "farms@greenvalley.com | +123456789"
+      }
+  },
     // Add more product objects as needed
   ];
