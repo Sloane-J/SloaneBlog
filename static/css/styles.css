@@ -1,0 +1,45 @@
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+  }
+  
+  .dark-mode .bg-gray-900 {
+    background-color: #1a1a1a;
+  }
+  
+  .dark-mode .bg-gray-800 {
+    background-color: #252525;
+  }
+  
+  .dark-mode .bg-gray-700 {
+    background-color: #323232;
+  }
+  
+  .dark-mode .shadow {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Responsive grid and product card hover effects */
+  @media (max-width: 767px) {
+    .product-card {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .product-card {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .product-card {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .product-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
