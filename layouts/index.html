@@ -234,7 +234,7 @@
           <!-- Deals Section (Modified) -->
           <div class="md:col-span-1 lg:col-span-5">
             <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-100">Deals</h3>
-            <div class="grid grid-cols-5 gap-4 md:gap-6">
+            <div class="grid grid-cols-1 gap-4 md:gap-6">
               {{ range first 5 (where .Site.Pages "Section" "deals") }}
               <div class="bg-gray-700 rounded-lg shadow-lg hover:scale-105 transition">
                 <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
@@ -305,6 +305,7 @@
         </div>
       </div>
     </section>
+    
     
     
     <!-- Social and CTA -->
