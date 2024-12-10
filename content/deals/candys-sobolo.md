@@ -1,17 +1,34 @@
 ---
-title: "Wireless Noise-Canceling Headphones"
-date: 2024-02-15
+title: "Candy's Sobolo"
+date: 2024-12-10
 draft: false
 featured: true
-image: "/images/headphones.jpg"
-summary: "Premium over-ear wireless headphones with advanced noise-canceling technology and exceptional sound quality"
-price: 249.99
+image: "/images/sobolo.webp"
+summary: "A refreshing, healthy drink made with hibiscus, ginger, and a blend of spices. Perfect for hydration and promoting overall health."
+price: 7.99
 seller:
-  name: "TechNova Electronics"
+  name: "Sandra Candycane"
   contact:
-    telephone: "+1 (555) 123-4567"
-    email: "support@technova.com"
+    telephone: "+233 (555) 789-1234"
+    email: "sandra@candysobolo.com"
+tags:
+    - sale
+    - deal
+    - ad
+    - advertisement
+    - sobolo
+    - candy's sobolo
+    - health drink
+    - healthy living
+categories:
+    - ad
+    - deal
+    - sale
+    - candy
+    - candy's sobolo
+    - sobolo
 ---
+
 
 <style>
 
@@ -176,6 +193,15 @@ a
 			</div>
 		</div>
 </div>
+
+
+**Candy's Sobolo**: A Refreshing Drink for Your Health
+
+Looking for a refreshing, healthy beverage? Try **Candy's Sobolo**, a popular West African drink made with hibiscus, ginger, and a blend of flavorful spices. This antioxidant-rich drink is perfect for boosting your health and staying hydrated throughout the day.
+
+Made with natural ingredients like hibiscus flowers, pineapple, and dates, **Candy's Sobolo** offers a unique blend of flavors that refreshes and revitalizes your body. Whether you’re looking for a delicious way to hydrate or a drink with multiple health benefits, Candy’s Sobolo is the perfect choice!
+
+Experience the refreshing taste and health benefits today!
 
 ## Product Description
 
