@@ -1,6 +1,8 @@
 ---
 title: "Eggs"
 price: 3.99
+draft: false
+featured: true
 image: "/images/eggs.webp"
 description: "Fresh organic eggs"
 category: "Food"
