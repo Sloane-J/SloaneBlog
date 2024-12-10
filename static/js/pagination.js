@@ -27,7 +27,8 @@ function initPagination(products) {
                 <h3 class="text-lg font-medium mb-2">${product.name}</h3>
                 <p class="text-gray-400 mb-2">${product.description}</p>
                 <p class="text-gray-300 font-bold">$${product.price}</p>
-                <p class="text-gray-400">Rating: ${product.rating}/5</p>
+                <p class="text-gray-400">Seller: ${product.seller}</p>
+                <p class="text-gray-400">Contact: ${product.contact}</p>
               </div>
             </a>
           `;
