@@ -3,7 +3,7 @@ const products = [
       name: "Product 1",
       description: "This is the description for Product 1",
       price: 19.99,
-      image: "/images/product1.jpg",
+      image: "/images/eggs.webp",
       category: "Category A"
     },
     {
