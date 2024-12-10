@@ -181,11 +181,11 @@ a
 			<img src="/images/sobolo-1.webp" alt="">
 		</div>
 		<div class="product-details">
-			<span class="product-catagory">Women,bag</span>
-			<h4><a href="">Women leather bag</a></h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+			<span class="product-category">Drink, Sobolo</span>
+<h4><a href="#">Candy's Sobolo</a></h4>
+<p>Experience the refreshing taste of Candy's Sobolo, made from hibiscus, ginger, and natural spices. This antioxidant-rich drink promotes health and hydration. A perfect blend of tradition and flavor!</p>
 			<div class="product-bottom-details">
-				<div class="product-price"><small>$96.00</small>$230.99</div>
+				<div class="product-price"><small>GH₵7.00</small>GH₵5.00</div>
 				<div class="product-links">
 					<a href=""><i class="fa fa-heart"></i></a>
 					<a href=""><i class="fa fa-shopping-cart"></i></a>
