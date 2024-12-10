@@ -4,7 +4,7 @@ const products = [
       description: "This is the description for Product 1",
       price: 19.99,
       image: "/images/eggs.webp",
-      category: "Category A"
+      category: ["Category A"]
     },
     {
       name: "Product 2",
@@ -26,7 +26,7 @@ const products = [
       category: ["Groceries"],
       price: 3.99,
       description: "Organic, fresh farm eggs available in packs of 12.",
-      image: "/images/deals/fresh-eggs.jpg",
+      image: "/images/eggs.webp",
       seller: {
           name: "Green Valley Farms",
           contact: "farms@greenvalley.com | +123456789"
