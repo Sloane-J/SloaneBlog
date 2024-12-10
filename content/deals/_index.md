@@ -7,7 +7,6 @@ title: "Best Deals and Discounts"
 description: "Curated collection of the latest and most valuable deals across various categories"
 layout: "deals"
 type: "deals"
-image: "/images/deals-hero.jpg"
 tags:
     - deals
     - discounts
