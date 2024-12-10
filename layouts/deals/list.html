@@ -1,8 +1,8 @@
 {{ define "main" }}
-<div class="bg-gray-100">
+<div class="bg-gray-900 text-white">
   <!-- Hero Section -->
   <div class="bg-gray-800 py-20">
-    <div class="container mx-auto px-4 text-white">
+    <div class="container mx-auto px-4">
       <h1 class="text-4xl font-bold mb-4">Explore Our Deals</h1>
       <p class="text-lg mb-8">Find the best products at unbeatable prices.</p>
     </div>
@@ -11,10 +11,17 @@
   <!-- Filters -->
   <div class="container mx-auto py-8">
     <div class="mb-4 flex flex-wrap justify-center">
-      <button class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded mr-2 mb-2" data-category="all">All</button>
+      <button class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded mr-2 mb-2" data-category="all">All</button>
       {{ range uniq (apply .Site.Pages "Param" "category") }}
-      <button class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded mr-2 mb-2" data-category="{{ . }}">{{ . }}</button>
+      <button class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded mr-2 mb-2" data-category="{{ . }}">{{ . }}</button>
       {{ end }}
+      <div class="ml-auto">
+        <select class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded" id="sort-select">
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating-desc">Rating: High to Low</option>
+        </select>
+      </div>
     </div>
   </div>
 
@@ -22,6 +29,7 @@
   <div class="container mx-auto py-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="product-grid">
     </div>
+    <div class="flex justify-center mt-8" id="pagination"></div>
   </div>
 </div>
 
@@ -32,7 +40,8 @@
   </div>
 </footer>
 
-<script src="https://cdn.tailwindcss.com"></script>
 <script src="{{ "js/products.js" | relURL }}"></script>
 <script src="{{ "js/filters.js" | relURL }}"></script>
+<script src="{{ "js/pagination.js" | relURL }}"></script>
+<script src="{{ "css/styles.css" | relURL }}"></script>
 {{ end }}
