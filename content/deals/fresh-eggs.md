@@ -1,6 +1,11 @@
 ---
-title: "Fresh farm eggs"
-category: "Groceries"
-price: 49.99
-description: "High-quality crates of eggs at a budget price."
+title: "Eggs"
+price: 3.99
+image: "/images/eggs.webp"
+description: "Fresh organic eggs"
+category: "Food"
+slug: "eggs"
+seller:
+  name: "John Doe"
+  contact: "+1234567890"
 ---
