@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
       const productElement = document.createElement("div");
       productElement.classList.add("bg-gray-800", "shadow", "rounded", "overflow-hidden", "product-card");
 
+      // Ensure seller object exists before accessing properties
+      const sellerName = product.seller && product.seller.name ? product.seller.name : "Unknown Seller";
+      const sellerContact = product.seller && product.seller.contact ? product.seller.contact : "Not Available";
+
       productElement.innerHTML = `
         <a href="/deals/${product.slug}">
           <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
@@ -26,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
             <h3 class="text-lg font-medium mb-2">${product.name}</h3>
             <p class="text-gray-400 mb-2">${product.description}</p>
             <p class="text-gray-300 font-bold">$${product.price}</p>
-            <p class="text-gray-400">Seller: ${product.seller.name}</p>
-            <p class="text-gray-400">Contact: ${product.seller.contact}</p>
+            <p class="text-gray-400">Seller: ${sellerName}</p>
+            <p class="text-gray-400">Contact: ${sellerContact}</p>
           </div>
         </a>
       `;
