@@ -2,10 +2,10 @@
 title: "Wireless Noise-Canceling Headphones"
 date: 2024-02-15
 draft: false
+featured: true
 image: "/images/headphones.jpg"
-description: "Premium over-ear wireless headphones with advanced noise-canceling technology and exceptional sound quality"
+summary: "Premium over-ear wireless headphones with advanced noise-canceling technology and exceptional sound quality"
 price: 249.99
-
 seller:
   name: "TechNova Electronics"
   contact:
@@ -14,72 +14,213 @@ seller:
 ---
 
 <style>
-.product-card {
-    max-width: 400px;
-    margin: 20px auto;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+.container {
+    position: relative;
+}
+
+.container .card {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: #232323;
+    border-radius: 20px;
     overflow: hidden;
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
 }
 
-.product-card-image {
+.container .card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    height: 100%;
+    background: #1BBFE9;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
 }
 
-.product-card-content {
-    padding: 15px;
+.container .card:hover:before {
+    clip-path: circle(300px at 80% -20%);
 }
 
-.product-card-title {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
+.container .card:after {
+    content: "Nike";
+    position: absolute;
+    top: 30%;
+    left: -20%;
+    font-size: 12em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.04);
+
 }
 
-.product-card-seller {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 10px;
+.container .card .imgBx {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
 }
 
-.product-card-price {
-    font-size: 1.75em;
-    font-weight: bold;
-    color: #2ecc71;
-    margin-bottom: 10px;
+.container .card:hover .imgBx {
+    top: 0%;
+    transform: translateY(-25%);
+    /* bug  */
 }
 
-.product-card-contact {
-    background-color: #f1f1f1;
-    padding: 10px;
-    border-top: 1px solid #e0e0e0;
+.container .card .imgBx img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(20deg);
+    width: 270px;
 }
 
-.product-card-contact p {
-    margin: 5px 0;
-    font-size: 0.9em;
-    color: #555;
+.container .card .contentBx {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 90;
 }
+
+.container .card:hover .contentBx {
+    height: 210px;
+}
+
+.container .card .contentBx h2 {
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.container .card .contentBx .size,
+.container .card .contentBx .color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .card:hover .contentBx .size {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .5s;
+}
+
+.container .card:hover .contentBx .color {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .6s;
+}
+
+.container .card .contentBx .size h3,
+.container .card .contentBx .color h3 {
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+.container .card .contentBx .size span {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #111;
+    background: #fff;
+    margin: 0 5px;
+    transition: .5s;
+    color: #111;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container .card .contentBx .size span:hover {  /* other bug */
+    background: #B90000;
+}
+
+.container .card .contentBx .color span {
+    width: 20px;
+    height: 20px;
+    background: #ff0;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.container .card .contentBx .color span:nth-child(2) {
+     background: #1BBFE9;
+}
+
+.container .card .contentBx .color span:nth-child(3) {
+     background: #1B2FE9;
+}
+
+.container .card .contentBx .color span:nth-child(4) {
+     background: #080481;
+}
+
+.container .card .contentBx a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .5s;
+}
+
+.container .card:hover .contentBx a {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: .7s;
+} 
 </style>
 
-<div class="product-card">
-    <img src="/images/headphones.jpg" alt="Wireless Noise-Canceling Headphones" class="product-card-image">
-    <div class="product-card-content">
-        <div class="product-card-title">Wireless Noise-Canceling Headphones</div>
-        <div class="product-card-seller">Seller: TechNova Electronics</div>
-        <div class="product-card-price">$249.99</div>
+ <div class="container">
+        <div class="card">
+            <div class="imgBx">
+                <img src="http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png" alt="nike-air-shoe">
+            </div>
+            <div class="contentBx">
+                <h2>Nike Shoes</h2>
+                <div class="size">
+                    <h3>Size :</h3>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+                </div>
+                <div class="color">
+                    <h3>Color :</h3>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="#">Buy Now</a>
+            </div>
+        </div>
     </div>
-    <div class="product-card-contact">
-        <p>Phone: +1 (555) 123-4567</p>
-        <p>Email: support@technova.com</p>
-    </div>
-</div>
+
 
 ## Product Description
 
