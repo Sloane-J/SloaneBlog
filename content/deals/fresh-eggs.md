@@ -14,213 +14,140 @@ seller:
 ---
 
 <style>
-    
-.container {
-    position: relative;
+.wrapper {
+  height: 420px;
+  width: 654px;
+  margin: 50px auto;
+  border-radius: 7px 7px 7px 7px;
+  /* VIA CSS MATIC https://goo.gl/cIbnS */
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
 }
 
-.container .card {
-    position: relative;
-    width: 320px;
-    height: 450px;
-    background: #232323;
-    border-radius: 20px;
-    overflow: hidden;
+.product-img {
+  float: left;
+  height: 420px;
+  width: 327px;
 }
 
-.container .card:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #1BBFE9;
-    clip-path: circle(150px at 80% 20%);
-    transition: 0.5s ease-in-out;
+.product-img img {
+  border-radius: 7px 0 0 7px;
 }
 
-.container .card:hover:before {
-    clip-path: circle(300px at 80% -20%);
+.product-info {
+  float: left;
+  height: 420px;
+  width: 327px;
+  border-radius: 0 7px 10px 7px;
+  background-color: #ffffff;
 }
 
-.container .card:after {
-    content: "Nike";
-    position: absolute;
-    top: 30%;
-    left: -20%;
-    font-size: 12em;
-    font-weight: 800;
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.04);
-
+.product-text {
+  height: 300px;
+  width: 327px;
 }
 
-.container .card .imgBx {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000;
-    width: 100%;
-    height: 100%;
-    transition: .5s;
+.product-text h1 {
+  margin: 0 0 0 38px;
+  padding-top: 52px;
+  font-size: 34px;
+  color: #474747;
 }
 
-.container .card:hover .imgBx {
-    top: 0%;
-    transform: translateY(-25%);
-    /* bug  */
+.product-text h1,
+.product-price-btn p {
+  font-family: 'Bentham', serif;
 }
 
-.container .card .imgBx img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(20deg);
-    width: 270px;
+.product-text h2 {
+  margin: 0 0 47px 38px;
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #d2d2d2;
+  letter-spacing: 0.2em;
 }
 
-.container .card .contentBx {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    transition: 1s;
-    z-index: 90;
+.product-text p {
+  height: 125px;
+  margin: 0 0 0 38px;
+  font-family: 'Playfair Display', serif;
+  color: #8d8d8d;
+  line-height: 1.7em;
+  font-size: 15px;
+  font-weight: lighter;
+  overflow: hidden;
 }
 
-.container .card:hover .contentBx {
-    height: 210px;
+.product-price-btn {
+  height: 103px;
+  width: 327px;
+  margin-top: 17px;
+  position: relative;
 }
 
-.container .card .contentBx h2 {
-    position: relative;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #fff;
+.product-price-btn p {
+  display: inline-block;
+  position: absolute;
+  top: -13px;
+  height: 50px;
+  font-family: 'Trocchi', serif;
+  margin: 0 0 0 38px;
+  font-size: 28px;
+  font-weight: lighter;
+  color: #474747;
 }
 
-.container .card .contentBx .size,
-.container .card .contentBx .color {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 20px;
-    transition: .5s;
-    opacity: 0;
-    visibility: hidden;
+span {
+  display: inline-block;
+  height: 50px;
+  font-family: 'Suranna', serif;
+  font-size: 34px;
 }
 
-.container .card:hover .contentBx .size {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: .5s;
+.product-price-btn button {
+  float: right;
+  display: inline-block;
+  height: 50px;
+  width: 176px;
+  margin: 0 40px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: #9cebd5;
+  cursor: pointer;
+  outline: none;
 }
 
-.container .card:hover .contentBx .color {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: .6s;
+.product-price-btn button:hover {
+  background-color: #79b0a1;
 }
-
-.container .card .contentBx .size h3,
-.container .card .contentBx .color h3 {
-    color: white;
-    font-weight: 300;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-right: 10px;
-}
-
-.container .card .contentBx .size span {
-    width: 26px;
-    height: 26px;
-    text-align: center;
-    line-height: 26px;
-    font-size: 14px;
-    display: inline-block;
-    color: #111;
-    background: #fff;
-    margin: 0 5px;
-    transition: .5s;
-    color: #111;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.container .card .contentBx .size span:hover {  /* other bug */
-    background: #B90000;
-}
-
-.container .card .contentBx .color span {
-    width: 20px;
-    height: 20px;
-    background: #ff0;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.container .card .contentBx .color span:nth-child(2) {
-     background: #1BBFE9;
-}
-
-.container .card .contentBx .color span:nth-child(3) {
-     background: #1B2FE9;
-}
-
-.container .card .contentBx .color span:nth-child(4) {
-     background: #080481;
-}
-
-.container .card .contentBx a {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #fff;
-    border-radius: 4px;
-    margin-top: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    color: #111;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: .5s;
-}
-
-.container .card:hover .contentBx a {
-    opacity: 1;
-    transform: translateY(0px);
-    transition-delay: .7s;
-} 
 </style>
 
- <div class="container">
-        <div class="card">
-            <div class="imgBx">
-                <img src="http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png" alt="nike-air-shoe">
-            </div>
-            <div class="contentBx">
-                <h2>Nike Shoes</h2>
-                <div class="size">
-                    <h3>Size :</h3>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
-                    <span>10</span>
-                </div>
-                <div class="color">
-                    <h3>Color :</h3>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <a href="#">Buy Now</a>
-            </div>
-        </div>
+  <div class="wrapper">
+    <div class="product-img">
+      <img src="http://bit.ly/2tMBBTd" height="420" width="327">
     </div>
-
+    <div class="product-info">
+      <div class="product-text">
+        <h1>Candy's Sobolo</h1>
+        <h2>by Sandra Candycane</h2>
+       <p>Rich in antioxidants,<br> this drink helps combat free radicals in your body,<br> promoting overall health and vitality. The ingredients<br> blend harmoniously,<br> allowing room for growth.</p>
+      </div>
+      <div class="product-price-btn">
+        <p><span>78</span>$</p>
+        <button type="button">buy now</button>
+      </div>
+    </div>
+  </div>
 
 ## Product Description
 
