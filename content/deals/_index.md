@@ -5,8 +5,6 @@ featured: true
 image: "/images/deals-section-header.webp"
 title: "Best Deals and Discounts"
 description: "Curated collection of the latest and most valuable deals across various categories"
-layout: "deals"
-type: "deals"
 tags:
     - deals
     - discounts
@@ -17,8 +15,5 @@ categories:
     - Shopping
     - Lifestyle
 keywords: "deals, discounts, savings, bargains"
-cascade:
-showReadingTime: false
-showTableOfContents: false
 ---
 
