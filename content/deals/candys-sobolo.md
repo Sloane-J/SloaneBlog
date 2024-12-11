@@ -5,12 +5,12 @@ draft: false
 featured: true
 image: "/images/sobolo.webp"
 summary: "Discover the ultimate health drink that blends traditional West African flavors with incredible wellness benefits."
-price: 5.00
+price: 5.00 and 7.00
 seller:
-name: "Sandra Candycane"
+name: "Sandra Candylove"
 contact:
 telephone: "+233 (555) 789-1234"
-email: "sandra@candysobolo.com"
+email: "Sandrasedinam06@gmail.com"
 tags:
 - health drink
 - natural beverage
@@ -187,11 +187,10 @@ categories:
         </div>
     </div>
     <div class="seller-info">
-        <div class="seller-name">Sandra Candycane</div>
+        <div class="seller-name">Sandra Candylove</div>
         <div class="seller-contact">
-            <a href="tel:+233555789123">
-            .3📞 +233 (555) 789-1234</a>
-            <a href="mailto:sandra@candysobolo.com">📧 sandra@candysobolo.com</a>
+            <a href="tel:+233509489764">📞 +233 (509) 489 764</a>
+            <a href="mailto:sandra@candysobolo.com">📧 Sandrasedinam06@gmail.com</a>
         </div>
     </div>
 </div>
@@ -216,10 +215,10 @@ categories:
         </div>
     </div>
     <div class="seller-info">
-        <div class="seller-name">Sandra Candycane</div>
+        <div class="seller-name">Sandra Candylove</div>
         <div class="seller-contact">
-            <a href="tel:+233555789123">📞 +233 (555) 789-1234</a>
-            <a href="mailto:sandra@candysobolo.com">📧 sandra@candysobolo.com</a>
+            <a href="tel:+233509489764">📞 +233 (509) 489 764</a>
+            <a href="mailto:sandra@candysobolo.com">📧 Sandrasedinam06@gmail.com</a>
         </div>
     </div>
 </div>
@@ -245,6 +244,16 @@ Candy's Sobolo is a symphony of carefully selected, natural ingredients:
 - **Dates**: A natural sweetener providing richness and depth
 - **Prekese**: The secret weapon with incredible medicinal properties
 
+## Our Services
+
+We offer more than just a drink — we provide a complete experience:
+
+- **Free Deliveries in Ho**: Enjoy Candy's Sobolo at no extra cost within Ho.  
+- **Moderate Delivery Fee Outside Ho**: Affordable delivery options available beyond Ho.  
+- **Event Catering Services**: Whether it's a party, funeral, wedding, or naming ceremony, we bring Candy's Sobolo to your special occasions.  
+- **Local Bar Services**: Experience a traditional Sobolo bar setup, perfect for your events.  
+
+
 ## Why Choose Candy's Sobolo?
 
 1. **Natural Hydration**: More than just quenching thirst
@@ -252,10 +261,10 @@ Candy's Sobolo is a symphony of carefully selected, natural ingredients:
 3. **Traditional Wellness**: A drink rooted in centuries-old wisdom
 4. **Delicious Flavor**: A taste that delights and refreshes
 
-## Contact Our Founder
+## Contact The Vendor
 
-Curious to learn more? Connect with Sandra Candycane:
-- 📞 +233 (555) 789-1234
-- 📧 sandra@candysobolo.com
+Curious to learn more? Connect with Sandra Candylove:
+- 📞 +233 509 489 764
+- 📧 Sandrasedinam06@gmail.com
 
 Experience wellness. Experience tradition. Experience Candy's Sobolo!
