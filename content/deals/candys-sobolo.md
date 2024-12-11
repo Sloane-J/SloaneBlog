@@ -1,217 +1,211 @@
 ---
-title: "Candy's Sobolo"
+title: "Candy's Sobolo: A Taste of Wellness in Every Sip"
 date: 2024-12-10
 draft: false
 featured: true
 image: "/images/sobolo.webp"
-summary: "A refreshing, healthy drink made with hibiscus, ginger, and a blend of spices. Perfect for hydration and promoting overall health."
-price: 7.99
+summary: "Discover the ultimate health drink that blends traditional West African flavors with incredible wellness benefits."
+price: 5.00
 seller:
   name: "Sandra Candycane"
   contact:
     telephone: "+233 (555) 789-1234"
     email: "sandra@candysobolo.com"
 tags:
-    - sale
-    - deal
-    - ad
-    - advertisement
-    - sobolo
-    - candy's sobolo
     - health drink
-    - healthy living
-categories:
-    - ad
-    - deal
-    - sale
-    - candy
-    - candy's sobolo
+    - natural beverage
+    - wellness
+    - traditional drink
     - sobolo
+categories:
+    - health
+    - beverages
+    - wellness
 ---
 
-
 <style>
-
-*
-{
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-
-body
-{
-    font-family: 'Roboto', sans-serif;
-}
-a
-{
-    text-decoration: none;
-}
 .product-card {
-    width: 380px;
-    position: relative;
-    box-shadow: 0 2px 7px #dfdfdf;
-    margin: 50px auto;
-    background: #fafafa;
+    max-width: 400px;
+    margin: 30px auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-.badge {
+.product-card:hover {
+    transform: scale(1.02);
+}
+
+.product-badge {
     position: absolute;
-    left: 0;
-    top: 20px;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 700;
-    background: red;
-    color: #fff;
-    padding: 3px 10px;
+    top: 15px;
+    left: 15px;
+    background-color: #ff4500;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
 }
 
-.product-tumb {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.product-image {
+    width: 100%;
     height: 300px;
-    padding: 50px;
-    background: #f0f0f0;
-}
-
-.product-tumb img {
-    max-width: 100%;
-    max-height: 100%;
+    object-fit: cover;
+    background-color: #f8f8f8;
 }
 
 .product-details {
-    padding: 30px;
+    padding: 20px;
+    background-color: white;
 }
 
-.product-catagory {
-    display: block;
-    font-size: 12px;
-    font-weight: 700;
+.product-category {
+    color: #888;
     text-transform: uppercase;
-    color: #ccc;
-    margin-bottom: 18px;
+    font-size: 0.8em;
+    margin-bottom: 10px;
 }
 
-.product-details h4 a {
-    font-weight: 500;
-    display: block;
-    margin-bottom: 18px;
-    text-transform: uppercase;
-    color: #363636;
-    text-decoration: none;
-    transition: 0.3s;
+.product-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
 }
 
-.product-details h4 a:hover {
-    color: #fbb72c;
+.product-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-.product-details p {
-    font-size: 15px;
-    line-height: 22px;
-    margin-bottom: 18px;
-    color: #999;
-}
-
-.product-bottom-details {
-    overflow: hidden;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-.product-bottom-details div {
-    float: left;
-    width: 50%;
+.product-pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
 }
 
 .product-price {
-    font-size: 18px;
-    color: #fbb72c;
-    font-weight: 600;
+    font-size: 1.3em;
+    color: #ff4500;
+    font-weight: bold;
 }
 
-.product-price small {
-    font-size: 80%;
-    font-weight: 400;
+.product-original-price {
     text-decoration: line-through;
-    display: inline-block;
-    margin-right: 5px;
+    color: #999;
+    margin-right: 10px;
+    font-size: 0.9em;
 }
 
-.product-links {
-    text-align: right;
+.product-actions a {
+    color: #666;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.product-links a {
-    display: inline-block;
-    margin-left: 5px;
-    color: #e1e1e1;
-    transition: 0.3s;
-    font-size: 17px;
+.product-actions a:hover {
+    color: #ff4500;
 }
 
-.product-links a:hover {
-    color: #fbb72c;
+.seller-info {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
 }
 
-@media screen and (max-width: 480px) {
-  .wrapper {
-    width: 100%;
-    margin: 20px auto;
-  }
+.seller-name {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
 
-  .product-text h1 {
-    font-size: 22px;
-  }
+.seller-contact a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
 
-  .product-price-btn p {
-    font-size: 22px;
-  }
+.seller-contact a:hover {
+    color: #ff4500;
+}
+
+@media (max-width: 600px) {
+    .product-card {
+        max-width: 95%;
+        margin: 15px auto;
+    }
 }
 </style>
 
-
 <div class="product-card">
-		<div class="badge">Hot</div>
-		<div class="product-tumb">
-			<img src="/images/sobolo-1.webp" alt="">
-		</div>
-		<div class="product-details">
-			<span class="product-category">Drink, Sobolo</span>
-<h4><a href="#">Candy's Sobolo</a></h4>
-<p>Experience the refreshing taste of Candy's Sobolo, made from hibiscus, ginger, and natural spices. This antioxidant-rich drink promotes health and hydration. A perfect blend of tradition and flavor!</p>
-			<div class="product-bottom-details">
-				<div class="product-price"><small>GH₵7.00</small>GH₵5.00</div>
-				<div class="product-links">
-					<a href=""><i class="fa fa-heart"></i></a>
-					<a href=""><i class="fa fa-shopping-cart"></i></a>
-				</div>
-			</div>
-		</div>
+    <div class="product-badge">Hot Deal</div>
+    <img src="/images/sobolo-pack.webp" alt="Candy's Sobolo" class="product-image">
+    <div class="product-details">
+        <div class="product-category">Drink, Sobolo</div>
+        <h2 class="product-title">Candy's Sobolo</h2>
+        <p class="product-description">Experience the refreshing taste of Candy's Sobolo, a powerhouse drink made from hibiscus, ginger, and natural spices. Boost your health and hydration with every sip!</p>
+        <div class="product-pricing">
+            <div>
+                <span class="product-original-price">GH₵7.00</span>
+                <span class="product-price">GH₵5.00</span>
+            </div>
+            <div class="product-actions">
+                <a href="#" title="Add to Favorites">❤️</a>
+                <a href="#" title="Add to Cart">🛒</a>
+            </div>
+        </div>
+    </div>
+    <div class="seller-info">
+        <div class="seller-name">Sandra Candycane</div>
+        <div class="seller-contact">
+            <a href="tel:+233555789123">📞 +233 (555) 789-1234</a>
+            <a href="mailto:sandra@candysobolo.com">📧 sandra@candysobolo.com</a>
+        </div>
+    </div>
 </div>
 
 
-**Candy's Sobolo**: A Refreshing Drink for Your Health
+# Candy's Sobolo: A Journey of Flavor and Wellness
 
-Looking for a refreshing, healthy beverage? Try **Candy's Sobolo**, a popular West African drink made with hibiscus, ginger, and a blend of flavorful spices. This antioxidant-rich drink is perfect for boosting your health and staying hydrated throughout the day.
+Embark on a delightful wellness journey with Candy's Sobolo, a traditional West African beverage that transcends ordinary drinks. This isn't just a refreshment; it's a vibrant celebration of health, heritage, and natural goodness.
 
-Made with natural ingredients like hibiscus flowers, pineapple, and dates, **Candy's Sobolo** offers a unique blend of flavors that refreshes and revitalizes your body. Whether you’re looking for a delicious way to hydrate or a drink with multiple health benefits, Candy’s Sobolo is the perfect choice!
+## The Essence of Sobolo
 
-Experience the refreshing taste and health benefits today!
+Sobolo, known by various names like Zobo, sorrel, or bissap, is more than just a drink. It's a time-honored beverage that represents the rich culinary traditions of West Africa. Crafted with meticulous care, Candy's Sobolo transforms simple ingredients into a powerful elixir of health.
 
-## Product Description
+## Health in Every Sip
 
-Candy's Sobolo, also known as Zobo, sorrel, or bissap, is a popular drink in West Africa made from dried hibiscus leaves, spices, and sweetener. It’s a refreshing, healthy beverage rich in antioxidants, perfect for anyone seeking a revitalizing drink with multiple health benefits.
+### Our Remarkable Ingredients
 
-### Key Features (Ingredients)
+Candy's Sobolo is a symphony of carefully selected, natural ingredients:
 
-- **Hibiscus Flowers**: The main ingredient in sobolo, which provides a tangy flavor. Dried hibiscus flowers can be used, or the leaves can be soaked in water for a few hours or overnight.
-- **Pineapple**: Added for extra flavor and color, giving the drink a sweet and tropical twist.
-- **Ginger**: A common ingredient that adds a sweet and spicy taste, offering numerous health benefits.
-- **Spices**: A blend of spices like cloves, cinnamon, star anise, grains of paradise, African nutmeg, and black peppercorns enhance the flavor of sobolo.
-- **Dates**: Soaked in warm water until soft, dates are used as a natural sweetener for a rich taste.
-- **Prekese**: Also known as Aidan Fruit, prekese has medicinal properties and adds a unique flavor to sobolo.
+- **Hibiscus Flowers**: The star ingredient, providing a tangy flavor and packed with antioxidants
+- **Pineapple**: Adding a tropical twist and natural sweetness
+- **Ginger**: A powerful ingredient offering numerous health benefits
+- **Spice Blend**: A harmonious mix of cloves, cinnamon, star anise, and more
+- **Dates**: A natural sweetener providing richness and depth
+- **Prekese**: The secret weapon with incredible medicinal properties
+
+## Why Choose Candy's Sobolo?
+
+1. **Natural Hydration**: More than just quenching thirst
+2. **Rich in Antioxidants**: Fights free radicals and supports overall health
+3. **Traditional Wellness**: A drink rooted in centuries-old wisdom
+4. **Delicious Flavor**: A taste that delights and refreshes
+
+## Contact Our Founder
+
+Curious to learn more? Connect with Sandra Candycane:
+- 📞 +233 (555) 789-1234
+- 📧 sandra@candysobolo.com
+
+Experience wellness. Experience tradition. Experience Candy's Sobolo!
