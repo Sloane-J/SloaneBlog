@@ -1,6 +1,6 @@
 ---
 title: "Trailers"
-description: "Explore the latest movie and game trailers"
+summary: "Explore the latest movie and game trailers"
 layout: "trailers"
 url: "/trailers/"
 featured: true
