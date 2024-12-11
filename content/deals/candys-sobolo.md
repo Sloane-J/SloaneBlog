@@ -168,6 +168,33 @@ categories:
 </style>
 
 
+<div class="product-card">
+    <div class="product-badge">Hot Deal</div>
+    <img src="/images/sobolo-1.webp" alt="Candy's Sobolo" class="product-image">
+    <div class="product-details">
+        <div class="product-category">Drink, Sobolo</div>
+        <h2 class="product-title">Candy's Sobolo</h2>
+        <p class="product-description">Experience the refreshing taste of Candy's Sobolo, a powerhouse drink made from hibiscus, ginger, and natural spices. Boost your health and hydration with every sip!</p>
+        <div class="product-pricing">
+            <div>
+                <span class="product-original-price">GH₵7.00</span>
+                <span class="product-price">GH₵5.00</span>
+            </div>
+            <div class="product-actions">
+                <a href="#" title="Add to Favorites">❤️</a>
+                <a href="#" title="Add to Cart">🛒</a>
+            </div>
+        </div>
+    </div>
+    <div class="seller-info">
+        <div class="seller-name">Sandra Candycane</div>
+        <div class="seller-contact">
+            <a href="tel:+233555789123">📞 +233 (555) 789-1234</a>
+            <a href="mailto:sandra@candysobolo.com">📧 sandra@candysobolo.com</a>
+        </div>
+    </div>
+</div>
+
 # Candy's Sobolo: A Journey of Flavor and Wellness
 
 Embark on a delightful wellness journey with Candy's Sobolo, a traditional West African beverage that transcends ordinary drinks. This isn't just a refreshment; it's a vibrant celebration of health, heritage, and natural goodness.
