@@ -3,7 +3,7 @@ title: "Invincible Season 3 - Official Trailer"
 date: 2024-12-11
 published_date: 2024-11-12
 summary: "Invincible Season 3 - Official Trailer"
-tags: ["movies", "action", "trailer", "john wick"]
+tags: ["movies", "action", "trailer", "invincible"]
 categories: ["Movies", "Trailers", "Action"]
 video: "https://youtube.com/embed/rbHUhCcSXEM?si=KyG6iiwILgrOKcfP"
 trailer_type: "movie"
