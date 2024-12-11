@@ -170,7 +170,7 @@ categories:
 
 <div class="product-card">
     <div class="product-badge">Hot Deal</div>
-    <img src="/images/sobolo-1.webp" alt="Candy's Sobolo" class="product-image">
+    <img src="/images/sobolo-pack.webp" alt="Candy's Sobolo" class="product-image">
     <div class="product-details">
         <div class="product-category">Drink, Sobolo</div>
         <h2 class="product-title">Candy's Sobolo</h2>
