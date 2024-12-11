@@ -120,6 +120,6 @@ Looking for fresh eggs at unbeatable prices? **YolkMaster** has got you covered!
 - **WhatsApp**: Drop us a message via the same number.  
 - **Email**: sandra@gmail.com  
 
-{{< figure src="/images/yolkmaster-1.webp" alt="Yolkmaster flyer" class="img-class" caption="Yolkmaster flyer"  >}}
+{{< figure src="/images/yolk-master-1.webp" alt="Yolkmaster flyer" class="img-class" caption="Yolkmaster flyer"  >}}
 
 Don’t miss out on this eggcellent deal—get your eggs delivered with ease!
