@@ -10,4 +10,6 @@ tags:
 - technology
 - tech
 - programming
+featured: true
+image: "/images/technology-banner-head.webp"
 ---
