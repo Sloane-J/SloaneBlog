@@ -6,6 +6,8 @@ categories: [Deals, Food]
 summary: "Great deal on eggs"
 tags: [Eggs, Delivery, Deals, Ho]
 draft: false
+featured: true
+image: "/images/yolk-master-3.webp"
 seller:
 name: "Yolkmaster"
 contact:
@@ -59,19 +61,28 @@ categories:
             background-color: rgba(0, 0, 0, 0.7);
         }
     </style>
+
+
+
+
+Looking for fresh eggs at unbeatable prices? **YolkMaster** has got you covered! Conveniently located just a click away from Ho Technical University, YolkMaster offers:  
+- **Freshly laid eggs** delivered straight to your doorstep.  
+- Delivery services exclusive to the **Ho area**.  
+
+
 <div class="carousel">
     <div class="carousel-track">
         <div class="carousel-slide">
-            <img src="image1.jpg" alt="Image 1">
+            <img src="/images/yolk-master-1.webp" alt="Image 1">
         </div>
         <div class="carousel-slide">
-            <img src="image2.jpg" alt="Image 2">
+            <img src="/images/yolk-master-2.webp" alt="Image 2">
         </div>
         <div class="carousel-slide">
-            <img src="image3.jpg" alt="Image 3">
+            <img src="/images/yolk-master-3.webp" alt="Image 3">
         </div>
         <div class="carousel-slide">
-            <img src="image4.jpg" alt="Image 4">
+            <img src="/images/yolk-master-4.webp" alt="Image 4">
         </div>
     </div>
     <div class="carousel-controls">
@@ -106,13 +117,6 @@ categories:
 
 </body>
 </html>
-
-
-
-
-Looking for fresh eggs at unbeatable prices? **YolkMaster** has got you covered! Conveniently located just a click away from Ho Technical University, YolkMaster offers:  
-- **Freshly laid eggs** delivered straight to your doorstep.  
-- Delivery services exclusive to the **Ho area**.  
 
 ### Contact YolkMaster Today
 - **Phone**: +233 509 489 764  
