@@ -16,7 +16,7 @@ categories:
 - protein
 - eggs
 ---
-    <style>
+ <style>
         .carousel {
             width: 80%;
             max-width: 600px;
@@ -59,7 +59,6 @@ categories:
             background-color: rgba(0, 0, 0, 0.7);
         }
     </style>
-
 <div class="carousel">
     <div class="carousel-track">
         <div class="carousel-slide">
