@@ -7,24 +7,25 @@ image: "/images/sobolo.webp"
 summary: "Discover the ultimate health drink that blends traditional West African flavors with incredible wellness benefits."
 price: 5.00
 seller:
-  name: "Sandra Candycane"
-  contact:
-    telephone: "+233 (555) 789-1234"
-    email: "sandra@candysobolo.com"
+name: "Sandra Candycane"
+contact:
+telephone: "+233 (555) 789-1234"
+email: "sandra@candysobolo.com"
 tags:
-    - health drink
-    - natural beverage
-    - wellness
-    - traditional drink
-    - sobolo
+- health drink
+- natural beverage
+- wellness
+- traditional drink
+- sobolo
 categories:
-    - health
-    - beverages
-    - wellness
+- health
+- beverages
+- wellness
 ---
 
 <style>
 .product-card {
+    position: relative;
     max-width: 400px;
     margin: 30px auto;
     border: 1px solid #e0e0e0;
@@ -40,46 +41,47 @@ categories:
 
 .product-badge {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 10px;
+    left: 10px;
     background-color: #ff4500;
     color: white;
     padding: 5px 10px;
     border-radius: 20px;
-    font-size: 0.8em;
-    font-weight: bold;
+    font-size: 0.7em;
+    z-index: 10;
 }
 
 .product-image {
     width: 100%;
-    height: 300px;
+    height: 250px;
     object-fit: cover;
     background-color: #f8f8f8;
 }
 
 .product-details {
-    padding: 20px;
+    padding: 15px;
     background-color: white;
 }
 
 .product-category {
     color: #888;
     text-transform: uppercase;
-    font-size: 0.8em;
-    margin-bottom: 10px;
+    font-size: 0.7em;
+    margin-bottom: 8px;
 }
 
 .product-title {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
     color: #333;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .product-description {
     color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 0.9em;
+    margin-bottom: 15px;
 }
 
 .product-pricing {
@@ -87,11 +89,11 @@ categories:
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #e0e0e0;
-    padding-top: 15px;
+    padding-top: 10px;
 }
 
 .product-price {
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: #ff4500;
     font-weight: bold;
 }
@@ -100,7 +102,7 @@ categories:
     text-decoration: line-through;
     color: #999;
     margin-right: 10px;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 .product-actions a {
@@ -116,7 +118,7 @@ categories:
 
 .seller-info {
     background-color: #f8f8f8;
-    padding: 15px;
+    padding: 12px;
     border-top: 1px solid #e0e0e0;
     text-align: center;
 }
@@ -124,14 +126,24 @@ categories:
 .seller-name {
     font-weight: bold;
     color: #333;
-    margin-bottom: 10px;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.seller-contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .seller-contact a {
     color: #666;
     text-decoration: none;
-    margin: 0 10px;
+    font-size: 0.8em;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
 .seller-contact a:hover {
@@ -143,35 +155,17 @@ categories:
         max-width: 95%;
         margin: 15px auto;
     }
+
+    .seller-contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .seller-contact a {
+        margin: 5px 0;
+    }
 }
 </style>
-
-<div class="product-card">
-    <div class="product-badge">Hot Deal</div>
-    <img src="/images/sobolo-pack.webp" alt="Candy's Sobolo" class="product-image">
-    <div class="product-details">
-        <div class="product-category">Drink, Sobolo</div>
-        <h2 class="product-title">Candy's Sobolo</h2>
-        <p class="product-description">Experience the refreshing taste of Candy's Sobolo, a powerhouse drink made from hibiscus, ginger, and natural spices. Boost your health and hydration with every sip!</p>
-        <div class="product-pricing">
-            <div>
-                <span class="product-original-price">GH₵7.00</span>
-                <span class="product-price">GH₵5.00</span>
-            </div>
-            <div class="product-actions">
-                <a href="#" title="Add to Favorites">❤️</a>
-                <a href="#" title="Add to Cart">🛒</a>
-            </div>
-        </div>
-    </div>
-    <div class="seller-info">
-        <div class="seller-name">Sandra Candycane</div>
-        <div class="seller-contact">
-            <a href="tel:+233555789123">📞 +233 (555) 789-1234</a>
-            <a href="mailto:sandra@candysobolo.com">📧 sandra@candysobolo.com</a>
-        </div>
-    </div>
-</div>
 
 
 # Candy's Sobolo: A Journey of Flavor and Wellness
