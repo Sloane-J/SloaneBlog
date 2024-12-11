@@ -3,6 +3,7 @@ title: "Fresh Egg Deals from YolkMaster!"
 date: 2024-12-11
 description: "Get freshly laid eggs delivered to your doorstep in Ho by YolkMaster. Affordable prices and convenient delivery."
 categories: [Deals, Food]
+summary: "Great deal on eggs"
 tags: [Eggs, Delivery, Deals, Ho]
 draft: false
 seller:
@@ -15,25 +16,7 @@ categories:
 - protein
 - eggs
 ---
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Carousel</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
         .carousel {
             width: 80%;
             max-width: 600px;
@@ -76,8 +59,6 @@ categories:
             background-color: rgba(0, 0, 0, 0.7);
         }
     </style>
-</head>
-<body>
 
 <div class="carousel">
     <div class="carousel-track">
