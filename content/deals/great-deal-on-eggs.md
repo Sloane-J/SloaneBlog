@@ -73,16 +73,13 @@ Looking for fresh eggs at unbeatable prices? **YolkMaster** has got you covered!
 <div class="carousel">
     <div class="carousel-track">
         <div class="carousel-slide">
-            <img src="/images/yolk-master-1.webp" alt="Image 1">
+            <img src="/images/yolk-master-4.webp" alt="Image 1">
         </div>
         <div class="carousel-slide">
             <img src="/images/yolk-master-2.webp" alt="Image 2">
         </div>
         <div class="carousel-slide">
             <img src="/images/yolk-master-3.webp" alt="Image 3">
-        </div>
-        <div class="carousel-slide">
-            <img src="/images/yolk-master-4.webp" alt="Image 4">
         </div>
     </div>
     <div class="carousel-controls">
@@ -122,5 +119,7 @@ Looking for fresh eggs at unbeatable prices? **YolkMaster** has got you covered!
 - **Phone**: +233 509 489 764  
 - **WhatsApp**: Drop us a message via the same number.  
 - **Email**: sandra@gmail.com  
+
+{{< figure src="/images/yolkmaster-1.webp" alt="Yolkmaster flyer" class="img-class" caption="Yolkmaster flyer"  >}}
 
 Don’t miss out on this eggcellent deal—get your eggs delivered with ease!
