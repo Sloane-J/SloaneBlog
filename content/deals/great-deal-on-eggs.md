@@ -12,7 +12,7 @@ seller:
 name: "Yolkmaster"
 contact:
 telephone: "+233 (555) 789-1234"
-email: "Sandrasedinam06@gmail.com"
+email: "sandrasedinam06@gmail.com"
 categories:
 - Deals
 - protein
@@ -118,7 +118,7 @@ Looking for fresh eggs at unbeatable prices? **YolkMaster** has got you covered!
 ### Contact YolkMaster Today
 - **Phone**: +233 509 489 764  
 - **WhatsApp**: Drop us a message via the same number.  
-- **Email**: sandra@gmail.com  
+- **Email**: sandrasedinam06@gmail.com  
 
 {{< figure src="/images/yolk-master-1.webp" alt="Yolkmaster flyer" class="img-class" caption="Yolkmaster flyer"  >}}
 
