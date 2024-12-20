@@ -34,6 +34,9 @@ enableRobotsTXT: true
 canonifyURLs: false
 
 params:
+  contact:
+    email: samueldorkeyjr@gmail.com
+    phone: +233 257774919
   pagination:
     pagerSize: 6
   logo: "/images/avatar.webp"
@@ -47,6 +50,8 @@ params:
   description: "My personal blog about technology, life, and interesting thoughts"
   favicon: "/images/avatar.webp"
   emoji: "❤️"
+
+  enableEmoji: true
 
   widgets:
     homepage:
@@ -187,3 +192,28 @@ sitemap:
 minify: 
   enable: true
 
+
+frontmatter:
+  date:
+  - date
+  - publishdate
+  - pubdate
+  - published
+  - lastmod
+  - modified
+  expiryDate:
+  - expirydate
+  - unpublishdate
+  lastmod:
+  - :git
+  - lastmod
+  - modified
+  - date
+  - publishdate
+  - pubdate
+  - published
+  publishDate:
+  - publishdate
+  - pubdate
+  - published
+  - date
