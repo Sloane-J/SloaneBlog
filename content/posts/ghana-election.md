@@ -2,16 +2,16 @@
 title: "Ghana's Political Crossroads: Bloomberg Tips Ex-President in High-Stakes Election"
 summary: "Bloomberg has tipped former President John Mahama to win Ghana's upcoming election, highlighting the ruling party's vulnerability amid a severe debt crisis."
 date: 2024-12-07
-author: ["Sloane"]
+pubdate: 2024-12-07
 draft: false
-categories: 
+categories:
   - International Politics
   - African Governance
   - Economic Policy
   - Electoral Politics
   - Ghana
   - Election
-tags: 
+tags:
   - Ghana Elections
   - Economic Crisis
   - African Politics
@@ -26,13 +26,12 @@ tags:
   - Bloomberg
 featured: true
 image: "/images/john-mahama.webp"
-image_credit: 
+image_credit:
   source: "Getty Images"
   url: "https://gettyimages.com/"
 seo:
   keywords: "Ghana, Elections, Ghana Elections, African Politics, John Mahama"
 ---
-
 
 # Ghana's Political Crossroads: A Bloomberg-Predicted Electoral Showdown
 

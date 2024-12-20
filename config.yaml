@@ -179,9 +179,10 @@ markup:
 enableGitinfo: true
 
 sitemap:
-  changefreq: weekly
+  changeFreq: weekly
+  disable: false
   filename: sitemap.xml
-  priority: 0.5
+  priority: -1
 
 minify: 
   enable: true
