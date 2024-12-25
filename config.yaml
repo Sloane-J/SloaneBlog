@@ -50,6 +50,11 @@ params:
   description: "My personal blog about technology, life, and interesting thoughts"
   favicon: "/images/avatar.webp"
   emoji: "❤️"
+  social:
+  - name: Github
+    url: "https://github.com/Sloane-J"
+  - name: Twitter
+    url: "https://twitter.com/sloane_jnr"
 
   enableEmoji: true
 
@@ -104,11 +109,7 @@ params:
       jobTitle: "Tech Blogger"
       description: "Writer and technology enthusiast sharing insights on science and technology"
 
-social:
-  - name: GitHub
-    url: "https://github.com/Sloane-J"
-  - name: Twitter
-    url: "https://twitter.com/sloane_jnr"
+
 
 menu:
   main:
