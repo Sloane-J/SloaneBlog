@@ -1,0 +1,38 @@
+editable:
+  - content
+uploads:
+  - dir: static
+    url: ""
+template_field: layout
+template_default: single
+templates:
+  single:
+    fields:
+      title:
+        attrs:
+          maxlength: 70
+      description:
+        attrs:
+          maxlength: 255
+      date:
+        type: datetime
+      draft:
+        type: boolean
+  post:
+    fields:
+      title:
+        attrs:
+          maxlength: 70
+      description:
+        attrs:
+          maxlength: 255
+      date:
+        type: datetime
+      draft:
+        type: boolean
+      categories:
+        type: list[text]
+      tags:
+        type: list[text]
+
+
