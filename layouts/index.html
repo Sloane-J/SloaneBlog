@@ -21,28 +21,28 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        dark: {
-                            50: '#1a202c',
-                            100: '#2d3748',
-                            200: '#4a5568',
-                            300: '#718096',
-                            400: '#a0aec0',
-                            500: '#cbd5e0',
-                            600: '#e2e8f0',
-                            700: '#edf2f7',
-                            800: '#f7fafc',
-                            900: '#ffffff'
-                        }
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                colors: {
+                    dark: {
+                        50: '#000000',    // Pure black
+                        100: '#111111',   // Very dark gray, almost black
+                        200: '#222222',   // Dark gray
+                        300: '#333333',   // Dark gray
+                        400: '#666666',   // Medium gray
+                        500: '#999999',   // Medium gray
+                        600: '#CCCCCC',   // Light gray
+                        700: '#DDDDDD',   // Lighter gray
+                        800: '#EEEEEE',   // Very light gray
+                        900: '#FFFFFF'    // White
                     }
                 }
             }
         }
-    </script>
+    }
+</script>
     
     <!-- Custom CSS -->
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -187,7 +187,7 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div class="space-y-6">
-                    <div class="bg-gray-200 dark:bg-dark-200 rounded-lg p-6 shadow-lg">
+                    <div class="bg-gray-200 dark:bg-dark-200 rounded-md p-6 shadow-lg">
                         <h2 class="text-2xl font-semibold text-gray-900 dark:text-dark-900 mb-4">Latest Insights</h2>
                         {{ with first 1 (where .Site.Pages "Type" "posts") }}
                             {{ range . }}
@@ -201,15 +201,15 @@
                         {{ end }}
                     </div>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="/posts" class="text-center px-6 py-3 border border-blue-600 text-blue-400 rounded-lg hover:bg-blue-600/10 transition">
+                        <a href="/posts" class="text-center px-6 py-3 border border-blue-600 text-blue-400 rounded-md hover:bg-blue-600/10 transition">
                             Browse All Posts
                         </a>
-                        <a href="/categories" class="text-center px-6 py-3 border border-green-600 text-green-400 rounded-lg hover:bg-green-600/10 transition">
+                        <a href="/categories" class="text-center px-6 py-3 border border-green-600 text-green-400 rounded-md hover:bg-green-600/10 transition">
                             Explore Topics
                         </a>
                     </div>
                 </div>
-                <div class="bg-gray-200 dark:bg-dark-200 rounded-lg p-6 shadow-lg">
+                <div class="bg-gray-200 dark:bg-dark-200 rounded-md p-6 shadow-lg">
                     <h2 class="text-2xl font-semibold text-gray-900 dark:text-dark-900 mb-6 text-center">Content Highlights</h2>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                         {{ range first 6 (where .Site.Pages "Params.featured" true) }}
@@ -234,7 +234,7 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-dark-900">Featured Articles</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="md:col-span-2 bg-gray-200 dark:bg-dark-200 rounded-lg shadow-lg overflow-hidden">
+                <div class="md:col-span-2 bg-gray-200 dark:bg-dark-200 rounded-md shadow-lg overflow-hidden">
                     <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-dark-900">{{ .Title }}</h3>
@@ -247,7 +247,7 @@
                 </div>
                 <div class="space-y-8">
                     {{ range first 2 (after 1 (where $.Site.Pages "Params.featured" true)) }}
-                        <div class="bg-gray-200 dark:bg-dark-200 rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
+                        <div class="bg-gray-200 dark:bg-dark-200 rounded-md shadow-lg overflow-hidden transform transition hover:scale-105">
                             <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-32 object-cover">
                             <div class="p-4">
                                 <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-dark-900">{{ .Title }}</h3>
@@ -275,7 +275,7 @@
             <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-dark-900">News</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {{ range first 2 (where .Site.Pages "Section" "posts") }}
-              <div class="bg-gray-200 dark:bg-dark-200 rounded-lg shadow-lg hover:scale-105 transition">
+              <div class="bg-gray-200 dark:bg-dark-200 rounded-md shadow-lg hover:scale-105 transition">
                 <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
                 <div class="p-3 md:p-4">
                   <h4 class="text-base md:text-lg font-semibold mb-2">
@@ -290,7 +290,7 @@
               </div>
               {{ end }}
             </div>
-            <a href="/news" class="mt-4 md:mt-6 inline-block px-4 py-2 md:px-6 md:py-3 text-xs md:text-base border border-blue-600 text-blue-400 rounded-lg hover:bg-blue-600/10 transition">
+            <a href="/news" class="mt-4 md:mt-6 inline-block px-4 py-2 md:px-6 md:py-3 text-xs md:text-base border border-blue-600 text-blue-400 rounded-md hover:bg-blue-600/10 transition">
               View All News
             </a>
           </div>
@@ -300,7 +300,7 @@
             <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-dark-900">How To</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {{ range first 2 (where .Site.Pages "Section" "tutorials") }}
-              <div class="bg-gray-200 dark:bg-dark-200 rounded-lg shadow-lg hover:scale-105 transition">
+              <div class="bg-gray-200 dark:bg-dark-200 rounded-md shadow-lg hover:scale-105 transition">
                 <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
                 <div class="p-3 md:p-4">
                   <h4 class="text-base md:text-lg font-semibold mb-2">
@@ -315,7 +315,7 @@
               </div>
               {{ end }}
             </div>
-            <a href="/tutorials" class="mt-4 md:mt-6 inline-block px-4 py-2 md:px-6 md:py-3 text-xs md:text-base border border-blue-600 text-blue-400 rounded-lg hover:bg-blue-600/10 transition">
+            <a href="/tutorials" class="mt-4 md:mt-6 inline-block px-4 py-2 md:px-6 md:py-3 text-xs md:text-base border border-blue-600 text-blue-400 rounded-md hover:bg-blue-600/10 transition">
               View All Tutorials
             </a>
           </div>
@@ -325,7 +325,7 @@
             <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-dark-900">Deals</h3>
             <div class="grid grid-cols-1 gap-4 md:gap-6">
               {{ range first 5 (where .Site.Pages "Section" "deals") }}
-              <div class="bg-gray-200 dark:bg-dark-200 rounded-lg shadow-lg hover:scale-105 transition">
+              <div class="bg-gray-200 dark:bg-dark-200 rounded-md shadow-lg hover:scale-105 transition">
                 <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
                 <div class="p-3 md:p-4">
                   <h4 class="text-base md:text-lg font-semibold mb-2">
@@ -340,7 +340,7 @@
               </div>
               {{ end }}
             </div>
-            <a href="/deals" class="mt-4 md:mt-6 inline-block px-4 py-2 md:px-6 md:py-3 text-xs md:text-base border border-yellow-600 text-yellow-400 rounded-lg hover:bg-yellow-600/10 transition">
+            <a href="/deals" class="mt-4 md:mt-6 inline-block px-4 py-2 md:px-6 md:py-3 text-xs md:text-base border border-yellow-600 text-yellow-400 rounded-md hover:bg-yellow-600/10 transition">
               View All Deals
             </a>
           </div>
@@ -350,7 +350,7 @@
             <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-dark-900">Technology</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {{ range first 2 (where .Site.Pages "Section" "technology") }}
-              <div class="bg-gray-200 dark:bg-dark-200 rounded-lg shadow-lg hover:scale-105 transition">
+              <div class="bg-gray-200 dark:bg-dark-200 rounded-md shadow-lg hover:scale-105 transition">
                 <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
                 <div class="p-3 md:p-4">
                   <h4 class="text-base md:text-lg font-semibold mb-2">
@@ -365,7 +365,7 @@
               </div>
               {{ end }}
             </div>
-            <a href="/technology" class="mt-4 md:mt-6 inline-block px-4 py-2 md:px-6 md:py-3 text-xs md:text-base border border-green-600 text-green-400 rounded-lg hover:bg-green-600/10 transition">
+            <a href="/technology" class="mt-4 md:mt-6 inline-block px-4 py-2 md:px-6 md:py-3 text-xs md:text-base border border-green-600 text-green-400 rounded-md hover:bg-green-600/10 transition">
               View All Technology
             </a>
           </div>
@@ -375,7 +375,7 @@
             <h3 class="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-dark-900">Trailers</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {{ range first 2 (where .Site.Pages "Section" "trailers") }}
-              <div class="bg-gray-200 dark:bg-dark-200 rounded-lg shadow-lg hover:scale-105 transition">
+              <div class="bg-gray-200 dark:bg-dark-200 rounded-md shadow-lg hover:scale-105 transition">
                 <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-20 md:h-24 rounded-t-lg object-cover">
                 <div class="p-3 md:p-4">
                   <h4 class="text-base md:text-lg font-semibold mb-2">
@@ -390,7 +390,7 @@
               </div>
               {{ end }}
             </div>
-            <a href="/trailers" class="mt-4 md:mt-6 inline-block px-4 py-2 md:px-6 md:py-3 text-xs md:text-base border border-red-600 text-red-400 rounded-lg hover:bg-red-600/10 transition">
+            <a href="/trailers" class="mt-4 md:mt-6 inline-block px-4 py-2 md:px-6 md:py-3 text-xs md:text-base border border-red-600 text-red-400 rounded-md hover:bg-red-600/10 transition">
               View All Trailers
             </a>
           </div>
@@ -407,7 +407,7 @@
         <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-dark-900">Latest News</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Main news article -->
-            <div class="md:col-span-2 bg-gray-200 dark:bg-dark-200 rounded-lg shadow-lg overflow-hidden">
+            <div class="md:col-span-2 bg-gray-200 dark:bg-dark-200 rounded-md shadow-lg overflow-hidden">
                 <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-64 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-dark-900">{{ .Title }}</h3>
@@ -420,7 +420,7 @@
             <!-- Two smaller news articles -->
             <div class="space-y-8">
                 {{ range first 2 (after 1 (where $.Site.Pages "Section" "posts")) }}
-                    <div class="bg-gray-200 dark:bg-dark-200 rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
+                    <div class="bg-gray-200 dark:bg-dark-200 rounded-md shadow-lg overflow-hidden transform transition hover:scale-105">
                         <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-32 object-cover">
                         <div class="p-4">
                             <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-dark-900">{{ .Title }}</h3>
@@ -436,7 +436,7 @@
             <!-- Changed this section to display horizontally -->
             <div class="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-8">
                 {{ range first 3 (after 5 (where $.Site.Pages "Section" "posts")) }}
-                    <div class="bg-gray-200 dark:bg-dark-200 rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
+                    <div class="bg-gray-200 dark:bg-dark-200 rounded-md shadow-lg overflow-hidden transform transition hover:scale-105">
                         <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-32 object-cover">
                         <div class="p-4">
                             <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-dark-900">{{ .Title }}</h3>
@@ -467,8 +467,8 @@
               <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-dark-900">Stay Updated</h3>
               <p class="text-gray-600 dark:text-dark-400 mb-8">Subscribe to my newsletter for the latest content and insights.</p>
               <form class="flex flex-col sm:flex-row max-w-md mx-auto">
-                  <input type="email" placeholder="Enter your email" required class="w-full sm:flex-grow px-4 py-3 mb-4 sm:mb-0 sm:mr-4 border border-gray-300 dark:border-dark-200 bg-gray-200 dark:bg-dark-100 text-gray-900 dark:text-dark-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                  <button type="submit" class="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-500 transition">
+                  <input type="email" placeholder="Enter your email" required class="w-full sm:flex-grow px-4 py-3 mb-4 sm:mb-0 sm:mr-4 border border-gray-300 dark:border-dark-200 bg-gray-200 dark:bg-dark-100 text-gray-900 dark:text-dark-900 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <button type="submit" class="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 dark:hover:bg-blue-500 transition">
                       Subscribe
                   </button>
               </form>
