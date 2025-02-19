@@ -18,8 +18,6 @@ outputFormats:
 
 mainSections:
   - posts
-  - tutorials
-  - projects
   - technology
   - deals
   - trailers
@@ -125,18 +123,6 @@ menu:
       weight: 2
       params:
         icon: news
-    - identifier: tutorials
-      name: Tutorials
-      url: /tutorials
-      weight: 3
-      params:
-        icon: school
-    - identifier: projects
-      name: Projects
-      url: /projects
-      weight: 4
-      params:
-        icon: code
     - identifier: technology
       name: Technology
       url: /technology
