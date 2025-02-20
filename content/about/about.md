@@ -41,6 +41,5 @@ I'm always excited to connect with fellow tech enthusiasts and readers. Find me 
 - [Email](mailto:samueldorkeyjr@gmail.com.com)
 - [LinkedIn](https://www.linkedin.com/in/samuel-dorkey-9a88901bb/)
 
-Let's share ideas, collaborate, and grow together!
 
-Thank you for visiting my blog, and I hope you find the content here engaging and valuable. Happy reading!
+I hope you find the content here engaging and valuable. Happy reading!
