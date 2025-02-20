@@ -879,7 +879,7 @@
    </section>
 
     
-     <!-- Deals Bento Grid -->
+     <!-- Trailers Bento Grid -->
      <section
      class="bg-gradient-to-br from-gray-100 dark:from-dark-100 to-gray-200 dark:to-dark-50 py-16"
    >
@@ -952,6 +952,112 @@
          <!-- Changed this section to display horizontally -->
          <div class="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-8">
            {{ range first 3 (after 5 (where $.Site.Pages "Section" "trailers")) }}
+           <div
+             class="bg-gray-200 dark:bg-dark-200 rounded-md overflow-hidden transform transition hover:scale-105"
+           >
+             <img
+               src="{{ .Params.image }}"
+               alt="{{ .Title }}"
+               class="w-full h-32 object-cover"
+             />
+             <div class="p-4">
+               <h3
+                 class="text-lg font-semibold mb-2 text-gray-900 dark:text-dark-900"
+               >
+                 {{ .Title }}
+               </h3>
+               <p class="text-gray-600 dark:text-dark-400 mb-4">
+                 {{ truncate 100 .Summary }}
+               </p>
+               <a
+                 href="{{ .Permalink }}"
+                 class="inline-block px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 dark:hover:bg-blue-500 transition"
+               >
+                 Read More
+               </a>
+             </div>
+           </div>
+           {{ end }}
+         </div>
+       </div>
+     </div>
+     {{ end }} {{ end }}
+   </section>
+
+    
+     <!-- Deals Bento Grid -->
+     <section
+     class="bg-gradient-to-br from-gray-100 dark:from-dark-100 to-gray-200 dark:to-dark-50 py-16"
+   >
+     {{ if gt (len (where .Site.Pages "Section" "deals")) 0 }} {{ with index
+     (where .Site.Pages "Section" "deals") 0 }}
+     <div class="container mx-auto px-4">
+       <h2
+         class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-dark-900"
+       >
+         Deals
+       </h2>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+         <!-- Main deals article -->
+         <div
+           class="md:col-span-2 bg-gray-200 dark:bg-dark-200 rounded-md overflow-hidden"
+         >
+           <img
+             src="{{ .Params.image }}"
+             alt="{{ .Title }}"
+             class="w-full h-64 object-cover"
+           />
+           <div class="p-6">
+             <h3
+               class="text-xl font-semibold mb-3 text-gray-900 dark:text-dark-900"
+             >
+               {{ .Title }}
+             </h3>
+             <p class="text-gray-600 dark:text-dark-400 mb-4">
+               {{ truncate 200 .Summary }}
+             </p>
+             <a
+               href="{{ .Permalink }}"
+               class="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 dark:hover:bg-blue-500 transition"
+             >
+               Read Full Article
+             </a>
+           </div>
+         </div>
+         <!-- Two smaller news articles -->
+         <div class="space-y-8">
+           {{ range first 2 (after 1 (where $.Site.Pages "Section" "deals")) }}
+           <div
+             class="bg-gray-200 dark:bg-dark-200 rounded-md overflow-hidden transform transition hover:scale-105"
+           >
+             <img
+               src="{{ .Params.image }}"
+               alt="{{ .Title }}"
+               class="w-full h-32 object-cover"
+             />
+             <div class="p-4">
+               <h3
+                 class="text-lg font-semibold mb-2 text-gray-900 dark:text-dark-900"
+               >
+                 {{ .Title }}
+               </h3>
+               <p class="text-gray-600 dark:text-dark-400 mb-4">
+                 {{ truncate 100 .Summary }}
+               </p>
+               <a
+                 href="{{ .Permalink }}"
+                 class="inline-block px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 dark:hover:bg-blue-500 transition"
+               >
+                 Read More
+               </a>
+             </div>
+           </div>
+           {{ end }}
+         </div>
+
+         <!-- Changed this section to display horizontally -->
+         <div class="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-8">
+           {{ range first 3 (after 5 (where $.Site.Pages "Section" "deals")) }}
            <div
              class="bg-gray-200 dark:bg-dark-200 rounded-md overflow-hidden transform transition hover:scale-105"
            >
