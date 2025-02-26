@@ -1,119 +1,125 @@
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Basic Meta Tags -->
-<meta name="apple-mobile-web-title" content="Sloane's Blog">
-<meta name="application-name" content="Sloane's Blog">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="author" content="Samuel D. Jnr">
-<meta name="copyright" content="Copyright © 2024 Sloane's Blog">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ .Title }}">
-<meta name="twitter:description" content="{{ .Params.description }}">
-<meta name="twitter:image" content="{{ .Params.image }}">
-
-<link rel="sitemap" type="application/xml" href="https://syntaxplus-substance.netlify.app//sitemap.xml" />
-
-<!-- google adsense tag-->
-<meta name="google-adsense-account" content="ca-pub-9016996582695836">
-
-<!-- Description and Keywords -->
-{{- $description := partialCached "data/description" . .RelPermalink -}}
-<meta name='description' {{ printf "content=%q" $description | safeHTMLAttr }}>
-{{ with .Params.Keywords }}
-<meta name="keywords" content="{{ delimit . ", " }}">
-{{end}}
-
-<!-- Title -->
-{{- $title := partial "data/title" . -}}
-<title>{{ $title }} | Insights on Technology, Science, and More</title>
-
-<!-- Canonical Link -->
-<link rel="canonical" href="{{ .Permalink }}" />
-
-
-<!-- Open Graph Meta Tags -->
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="{{ .Params.image }}">
-<meta property="og:type" content="website">
-<meta property="og:title" content="{{ $title }}">
-<meta property="og:description" content="{{ $description }}">
-<meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:site_name" content="Sloane's Blog">
-<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
-
-<meta name="geo.region" content="GH">
-<meta name="geo.placename" content="Ghana">
-
-<!-- Favicon -->
-{{ with .Site.Params.favicon }}
-<link rel="icon" href="{{ . | relURL }}" type="image/png">
-{{ end }}
-
-<!-- Schema Markup -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "Sloane's Blog",
-  "description": "Insights on Technology, Science, and More",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Sloane's Blog",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ .Site.Params.logo }}"
-    }
-  },
-  "url": "{{ .Site.BaseURL }}",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "{{ .Permalink }}"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "Samuel D. Jnr",
-    "jobTitle": "Tech Blogger",
-    "description": "Writer and technology enthusiast sharing insights on science and technology"
-  },
-  "keywords": [
-    "technology",
-    "science",
-    "programming",
-    "tech insights",
-    "innovation"
-  ],
-  "inLanguage": "en-US",
-  "datePublished": "{{ .PublishDate.Format "2006-01-02" }}",
-  "dateModified": "{{ .Lastmod.Format "2006-01-02" }}"
-}
-</script>
-
-<!-- Additional Hugo Partials -->
-{{- partial "head/style.html" . -}}
-{{- partial "head/script.html" . -}}
-{{- partial "head/opengraph/include.html" . -}}
-
-<!-- Alternative Output Formats -->
-{{- range .AlternativeOutputFormats -}}
-<link
-  rel="{{ .Rel }}"
-  type="{{ .MediaType.Type }}"
-  href="{{ .Permalink | safeURL }}"
-/>
-{{- end -}}
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RHS9VGQ9PY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Basic Meta Tags -->
+  <meta name="author" content="Samuel D. Jnr">
+  <meta name="copyright" content="Copyright © 2024 Sloane's Blog">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="apple-mobile-web-title" content="Sloane's Blog">
+  <meta name="application-name" content="Sloane's Blog">
+  
+  <!-- Description and Keywords -->
+  {{- $description := partialCached "data/description" . .RelPermalink -}}
+  <meta name="description" {{ printf "content=%q" $description | safeHTMLAttr }}>
+  {{ with .Params.Keywords }}
+  <meta name="keywords" content="{{ delimit . ", " }}">
+  {{end}}
+  
+  <!-- Title -->
+  {{- $title := partial "data/title" . -}}
+  <title>{{ $title }} | Insights on Technology, Science, and More</title>
+  
+  <!-- Canonical Link - Critical for SEO -->
+  <link rel="canonical" href="{{ .Permalink }}">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ $title }}">
+  <meta property="og:description" content="{{ $description }}">
+  <meta property="og:image" content="{{ .Params.image }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="Sloane's Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ .Title }}">
+  <meta name="twitter:description" content="{{ .Params.description }}">
+  <meta name="twitter:image" content="{{ .Params.image }}">
+  
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="GH">
+  <meta name="geo.placename" content="Ghana">
+  
+  <!-- Google AdSense Tag -->
+  <meta name="google-adsense-account" content="ca-pub-9016996582695836">
+  
+  <!-- Sitemap Link -->
+  <link rel="sitemap" type="application/xml" href="https://syntaxplus-substance.netlify.app/sitemap.xml">
+  
+  <!-- Favicon -->
+  {{ with .Site.Params.favicon }}
+  <link rel="icon" href="{{ . | relURL }}" type="image/png">
+  {{ end }}
+  
+  <!-- Schema Markup - Important for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ .Permalink }}"
+    },
+    "headline": "{{ $title }}",
+    "description": "{{ $description }}",
+    "image": "{{ .Params.image }}",
+    "author": {
+      "@type": "Person",
+      "name": "Samuel D. Jnr",
+      "jobTitle": "Tech Blogger",
+      "description": "Writer and technology enthusiast sharing insights on science and technology"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sloane's Blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.Params.logo }}"
+      }
+    },
+    "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}",
+    "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+    "keywords": [
+      "technology",
+      "science",
+      "programming",
+      "tech insights",
+      "innovation"
+    ],
+    "inLanguage": "en-US"
   }
-  gtag("js", new Date());
-  gtag("config", "G-RHS9VGQ9PY");
-</script>
-
-<!-- Additional Custom Head Content -->
-{{- partial "head/custom.html" . -}}
+  </script>
+  
+  <!-- Alternative Output Formats -->
+  {{- range .AlternativeOutputFormats -}}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+  {{- end -}}
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RHS9VGQ9PY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-RHS9VGQ9PY");
+  </script>
+  
+  <!-- Additional Hugo Partials -->
+  {{- partial "head/style.html" . -}}
+  {{- partial "head/script.html" . -}}
+  {{- partial "head/opengraph/include.html" . -}}
+  
+  <!-- Additional Custom Head Content -->
+  {{- partial "head/custom.html" . -}}
+</head>
