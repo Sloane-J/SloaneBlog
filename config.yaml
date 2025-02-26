@@ -2,6 +2,7 @@ baseURL: "https://intheloop-blog.netlify.app/"
 theme: "stack"
 languageCode: "en-GB"
 title: "InTheLoop"
+disqusShortname: "in-the-loop-blog-1"
 
 outputs:
   home:
@@ -46,6 +47,9 @@ params:
   search:
     enable: true
     type: basic
+  comments:
+    enabled: true
+    provider: disqus
   description: "My personal blog about technology, life, and interesting thoughts"
   favicon: "/images/avatar.webp"
   emoji: "❤️"
@@ -84,20 +88,6 @@ params:
     math: true
     toc: true
 
-  comments:
-    enabled: true
-    provider: giscus
-    giscus:
-      repo: "Sloane-J/SloaneBlog"
-      repoID: "R_kgDONXOl1A"
-      category: "General"
-      categoryID: "DIC_kwDONXOl1M4Ckxju"
-      mapping: "pathname"
-      reactionsEnabled: 1
-      emitMetadata: 0
-      lang: "en"
-      theme: "preferred_color_scheme"
-
   schema:
     name: "Sloane's Blog"
     description: "Insights on Technology, Science, and More"
@@ -107,8 +97,6 @@ params:
       name: "Samuel D. Jnr"
       jobTitle: "Tech Blogger"
       description: "Writer and technology enthusiast sharing insights on science and technology"
-
-
 
 menu:
   main:
@@ -185,7 +173,6 @@ sitemap:
 
 minify: 
   enable: true
-
 
 frontmatter:
   date:

@@ -1,10 +1,10 @@
 {{ define "body-class" }}
     article-page
-    {{/* 
+    
         Enable the right sidebar if
             - Widget different from 'TOC' is enabled
             - TOC is enabled and not empty
-    */}}
+    
     {{- $HasWidgetNotTOC := false -}}
     {{- $TOCWidgetEnabled := false -}}
     {{- range .Site.Params.widgets.page -}}
@@ -33,7 +33,7 @@
     {{ partial "article/components/related-content" . }}
      
     {{ if not (eq .Params.comments false) }}
-        {{ partial "comments/include" . }}
+        {{ partial "comments/provider/disqus.html" . }}
     {{ end }}
 
     {{ partialCached "footer/footer" . }}
