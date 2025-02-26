@@ -1,37 +1,50 @@
 {{ define "body-class" }}
-    article-page
-    
-        Enable the right sidebar if
-            - Widget different from 'TOC' is enabled
-            - TOC is enabled and not empty
-    
-    {{- $HasWidgetNotTOC := false -}}
-    {{- $TOCWidgetEnabled := false -}}
-    {{- range .Site.Params.widgets.page -}}
-        {{- if ne .type "toc" -}}
-            {{ $HasWidgetNotTOC = true -}}
-        {{- else -}}
-            {{ $TOCWidgetEnabled = true -}}
-        {{- end -}}
-    {{- end -}}
+ article-page
 
-    {{- $TOCManuallyDisabled := eq .Params.toc false -}}
-    {{- $TOCEnabled := and (not $TOCManuallyDisabled) $TOCWidgetEnabled -}}
-    {{- $hasTOC := ge (len .TableOfContents) 100 -}}
-    {{- .Scratch.Set "TOCEnabled" (and $TOCEnabled $hasTOC) -}}
-    
-    {{- .Scratch.Set "hasWidget" (or $HasWidgetNotTOC (and $TOCEnabled $hasTOC)) -}}
+     Enable the right sidebar if
+         - Widget different from 'TOC' is enabled
+         - TOC is enabled and not empty
+
+ {{- $HasWidgetNotTOC := false -}}
+ {{- $TOCWidgetEnabled := false -}}
+ {{- range .Site.Params.widgets.page -}}
+     {{- if ne .type "toc" -}}
+         {{ $HasWidgetNotTOC = true -}}
+     {{- else -}}
+         {{ $TOCWidgetEnabled = true -}}
+     {{- end -}}
+ {{- end -}}
+
+ {{- $TOCManuallyDisabled := eq .Params.toc false -}}
+ {{- $TOCEnabled := and (not $TOCManuallyDisabled) $TOCWidgetEnabled -}}
+ {{- $hasTOC := ge (len .TableOfContents) 100 -}}
+ {{- .Scratch.Set "TOCEnabled" (and $TOCEnabled $hasTOC) -}}
+
+ {{- .Scratch.Set "hasWidget" (or $HasWidgetNotTOC (and $TOCEnabled $hasTOC)) -}}
 {{ end }}
 
 {{ define "main" }}
     {{ partial "article/article.html" . }}
+
+    <!-- 📌 Google AdSense Ad Unit (Placed after the article content) -->
+    <div style="text-align:center; margin: 20px 0;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9016996582695836"
+             data-ad-slot="YOUR_AD_SLOT_ID"
+             data-ad-format="auto"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    <!-- 📌 End of Google AdSense Ad Unit -->
 
     {{ if .Params.links }}
         {{ partial "article/components/links" . }}
     {{ end }}
 
     {{ partial "article/components/related-content" . }}
-     
+
     {{ if not (eq .Params.comments false) }}
         {{ partial "comments/provider/disqus.html" . }}
     {{ end }}
