@@ -55,6 +55,9 @@
   {{ with .Site.Params.favicon }}
   <link rel="icon" href="{{ . | relURL }}" type="image/png">
   {{ end }}
+
+  <!-- website scheme -->
+  {{- partial "schema/breadcrumbs.html" . -}}
   
   <!-- Schema Markup - Important for search engines -->
   <script type="application/ld+json">
