@@ -3,37 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="apple-mobile-web-title" content="InTheLoop" />
+    
+    <!-- Progressive Web App and Mobile Optimizations -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="InTheLoop" />
     <meta name="application-name" content="InTheLoop" />
-    <meta
-      name="robots"
-      content="index. follow, max-image-preview:large, max-snippert:-1, max-video-preview:-1"
-    />
-    <title>{{ .Site.Title }} | Insights on Technology, Science, and More</title>
-    <meta
-      name="description"
-      content="Insights on Technology, Science, and More"
-    />
-    <link rel="canonical" href="https://intheloop-blog.netlify.app//" />
-    <meta property="og:locale" content="en_US" />
-    <meta
-      property="og:description"
-      content="Insights on Technology, Science, and More."
-    />
-    <meta property="og:site_name" content="InTheLoop" />
-    <meta
-      property="article:modified_time"
-      content="2024-12-03T21:45:30+00:00"
-    />
-    <meta
-      name="keywords"
-      content="Sloane, Blog, InTheLoop, technology, science, programming, coding, web development, software engineering, tech insights, innovation, digital trends, tech writing, computer science, artificial intelligence, machine learning, data science, technology news, tech analysis, tech education, emerging technologies, Ghana, News, articles, tv3 news, ghanaweb, ameyaw debrah, dorkey, samuel dorkey"
-    />
+
+    <!-- SEO Optimizations -->
+    <title>InTheLoop | Insights on Technology, Science, and More</title>
+    <meta name="description" content="Cutting-edge insights into technology, science, and digital innovation. Explore the latest trends, research, and thought-provoking analysis." />
+    <link rel="canonical" href="https://intheloop-blog.netlify.app/" />
+    
+    <!-- Robots and Crawling Instructions -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
+    <!-- Keywords -->
+    <meta name="keywords" content="technology, science, programming, web development, artificial intelligence, machine learning, data science, tech innovation, emerging technologies" />
+    
+    <!-- Author and Copyright -->
     <meta name="author" content="Samuel D. Jnr" />
-    <meta name="copyright" content="Copyright © 2024 InTheLoop" />
-    <meta property="og:url" content="https://intheloop-blog.netlify.app//" />
-    <link rel="icon" href="{{ .Site.Params.favicon }}" type="image/png/webp" />
-    <!-- Tailwind CSS -->
+    <meta name="copyright" content="© 2024 InTheLoop. All rights reserved." />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="InTheLoop | Technology and Science Insights" />
+    <meta property="og:description" content="Exploring the frontiers of technology, science, and innovation." />
+    <meta property="og:url" content="https://intheloop-blog.netlify.app/" />
+    <meta property="og:site_name" content="InTheLoop" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="InTheLoop | Technology and Science Insights" />
+    <meta name="twitter:description" content="Exploring the frontiers of technology, science, and innovation." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="/images/avatar.webp" />
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:;" />
+
+    <!-- Performance Optimized Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -42,16 +53,16 @@
           extend: {
             colors: {
               dark: {
-                50: "#000000", // Pure black
-                100: "#111111", // Very dark gray, almost black
-                200: "#111111", // Dark gray
-                300: "#333333", // Dark gray
-                400: "#666666", // Medium gray
-                500: "#999999", // Medium gray
-                600: "#CCCCCC", // Light gray
-                700: "#DDDDDD", // Lighter gray
-                800: "#EEEEEE", // Very light gray
-                900: "#FFFFFF", // White
+                50: "#000000", 
+                100: "#111111", 
+                200: "#111111", 
+                300: "#333333", 
+                400: "#666666", 
+                500: "#999999", 
+                600: "#CCCCCC", 
+                700: "#DDDDDD", 
+                800: "#EEEEEE", 
+                900: "#FFFFFF", 
               },
             },
           },
@@ -59,17 +70,16 @@
       };
     </script>
 
-    <!-- Custom CSS -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Performance Optimized Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Custom Styles -->
     <style>
       body {
         font-family: "Inter", sans-serif;
         transition: background-color 0.3s, color 0.3s;
       }
-      /* Improved scrollbar for dark mode */
+       
       *::-webkit-scrollbar {
         width: 8px;
       }
@@ -81,48 +91,50 @@
         border-radius: 4px;
       }
     </style>
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Blog",
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "InTheLoop",
+      "description": "Insights on Technology, Science, and More",
+      "publisher": {
+        "@type": "Organization",
         "name": "InTheLoop",
-        "description": "Insights on Technology, Science, and More",
-        "publisher": {
-          "@type": "Organization",
-          "name": "InTheLoop",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://intheloop-blog.netlify.app//logo.png"
-          }
-        },
-        "url": "https://intheloop-blog.netlify.app//",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://intheloop-blog.netlify.app//"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Samuel D. Jnr",
-          "jobTitle": "Tech Blogger",
-          "description": "Writer and technology enthusiast sharing insights on science and technology"
-        },
-        "about": {
-          "@type": "Thing",
-          "description": "A blog dedicated to exploring technology, science, and innovative insights"
-        },
-        "keywords": [
-          "technology",
-          "science",
-          "programming",
-          "tech insights",
-          "innovation"
-        ],
-        "inLanguage": "en-US",
-        "datePublished": "2024-01-01",
-        "dateModified": "2024-12-03"
-      }
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://intheloop-blog.netlify.app/logo.png"
+        }
+      },
+      "url": "https://intheloop-blog.netlify.app/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://intheloop-blog.netlify.app/"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Samuel D. Jnr",
+        "jobTitle": "Tech Blogger",
+        "description": "Writer and technology enthusiast sharing insights on science and technology"
+      },
+      "about": {
+        "@type": "Thing",
+        "description": "A blog dedicated to exploring technology, science, and innovative insights"
+      },
+      "keywords": [
+        "technology",
+        "science",
+        "programming",
+        "tech insights",
+        "innovation"
+      ],
+      "inLanguage": "en-US",
+      "datePublished": "2024-01-01T00:00:00Z",
+      "dateModified": "2024-12-03T21:45:30Z"
+    }
     </script>
-  </head>
+</head>
   <body
     class="bg-white text-gray-200 dark:bg-black dark:text-dark-900 antialiased"
   >
